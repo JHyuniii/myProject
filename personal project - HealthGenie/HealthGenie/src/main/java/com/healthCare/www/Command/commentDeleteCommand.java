@@ -1,0 +1,21 @@
+package com.healthCare.www.Command;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.healthCare.www.DAO.postDAO;
+
+public class commentDeleteCommand implements Command{
+
+	@Override
+	public void excute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int commentNum = Integer.parseInt(request.getParameter("commentNum"));
+		postDAO dao = postDAO.getPostDAO();
+		int result = dao.deleteCommentDAO(commentNum);
+		request.setAttribute("result", result);
+	}
+	
+}
