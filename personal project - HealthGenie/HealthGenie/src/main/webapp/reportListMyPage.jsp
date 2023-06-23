@@ -44,30 +44,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
-
-	<%-- <div class="mb-3">
-		<label for="userId" class="form-label">작성자</label> <input type="text"
-			class="form-control" id="userId" name="userId"
-			value="${sessionScope.id }" readonly>
-	</div>
-	<div class="mb-3">
-		<div class="form-floating">
-			<textarea class="form-control" id="floatingTextarea" name="qnaTitle"
-				readonly>문의 드립니다.</textarea>
-			<label for="floatingTextarea">제목</label>
-		</div>
-	</div>
-	<div class="mb-3">
-		<div class="form-floating">
-			<textarea class="form-control" id="floatingTextarea2"
-				name="qnaContents" style="height: 150px" readonly>${requestScope.dto.qnaContents }</textarea>
-			<label for="floatingTextarea2">문의 내용을 자세히 적어주세요.</label>
-		</div>
-	</div> --%>
-
-
-
-
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

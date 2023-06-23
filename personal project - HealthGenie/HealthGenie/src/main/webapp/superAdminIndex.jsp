@@ -16,10 +16,6 @@
 	crossorigin="anonymous">
 
 <style>
-/* .superAdminCard {
-	width: 25vw;
-	height: 25vw;
-} */
 .card img {
 	width: 10vw;
 }

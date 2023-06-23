@@ -180,38 +180,33 @@
 
 
 	<script>
-		//HTML 요소 선택
+		//데이터 가공
 		var goalElements = document.querySelectorAll('.goal-data');
 
-		//데이터 추출
 		var data = {
 			labels : [],
 			series : [ [], [] ]
-		// 두 개의 빈 배열을 추가합니다.
 		};
 
-		//요소에서 데이터 읽기
 		goalElements.forEach(function(element) {
 			var weight = parseFloat(element.dataset.weight);
 			var muscle = parseFloat(element.dataset.muscleMass);
 			var date = element.dataset.date;
 
-			// 데이터 추가 (역순으로 추가)
-			data.labels.unshift(date); // 날짜를 맨 앞에 추가
+			data.labels.unshift(date); 
 			data.series[0].unshift({
 				x : date,
 				y : weight
-			}); // 첫 번째 배열에 몸무게 데이터 추가
+			}); 
 			data.series[1].unshift({
 				x : date,
 				y : muscle
-			}); // 두 번째 배열에 근육량 데이터 추가
+			}); 
 		});
 
 		// 차트 옵션 설정
 		var options = {
 			width : 1100,
-			/* height : 350, */
 			lineSmooth : false, // 선을 부드럽게 그리지 않음
 		};
 

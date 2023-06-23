@@ -92,7 +92,7 @@ function loadExercise(exerciseName) {
 			card.innerHTML = cardContent;
 			col.appendChild(card);
 
-			// 저장하기 버튼의 참조를 찾고 item.id 값을 data 속성에 저장합니다.
+			// item.id 값을 data 속성에 저장합니다.
 			var saveExerciseButton = card.querySelector('.saveExercise');
 			saveExerciseButton.dataset.id = item.id;
 			console.log("saveExerciseButton.dataset.id : " + saveExerciseButton.dataset.id);
@@ -169,30 +169,4 @@ $(document).ready(function () {
     loginForm.submit();
   });
 });
-
-//$('#id').on(
-//	'focusout',
-//	function() {
-//		let inputSuperId = $('#id').val();
-//		let loginForm = $("#loginForm");
-//		$.ajax({
-//			url: "idSuperCheck.do",
-//			type: "post",
-//			data: {
-//				"inputSuperId": inputSuperId
-//			},
-//			dataType: 'text',
-//			success: function(result) {
-//				if (result == 1) {
-//					console.log("result : " + result);
-//					loginForm.attr("action", "superLogin.do");
-//				} else {
-//					loginForm.attr("action", "login.do");
-//				}
-//			},
-//			error: function() {
-//				alert("오류가 발생했습니다. 다시 시도해주세요 :)");
-//			}
-//		})
-//	})
 

@@ -28,9 +28,6 @@
 }
 
 #main_carousel {
-	/* background: -moz-linear-gradient(top, #DEDEDE 0%, #C99B93 100%);
-	background: -webkit-linear-gradient(top, #DEDEDE 0%, #C99B93 100%);
-	background: linear-gradient(to bottom, #DEDEDE 0%, #C99B93 100%); */
 	background: -moz-linear-gradient(top, #DEDEDE 0%, #F3F8FF 100%);
 	background: -webkit-linear-gradient(top, #DEDEDE 0%, #F3F8FF 100%);
 	background: linear-gradient(to bottom, #DEDEDE 0%, #F3F8FF 100%);
