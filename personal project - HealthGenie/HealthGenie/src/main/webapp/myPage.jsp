@@ -139,7 +139,7 @@
 				<h5 class=" card-title">${sessionScope.id}님</h5>
 				<br>
 				<p class="card-text">🕐 함께 건강을 챙긴 시간 +
-					${requestScope.memberDate} 일</p>
+					<span style="color: blue; font-style: italic;">${requestScope.memberDate}</span> 일</p>
 			</div>
 			<div class="card-footer text-muted">
 				<a href="modifyMembership.do" class="btn btn-light">회원 정보 수정</a>
@@ -250,29 +250,6 @@
 			});
 		});
 	</script>
-
-
-	<!-- 	<script>
-		$('#reportListBtn').on('click', function() {
-			var qnaNum = $(this).data('num');
-			console.log(qnaNum);
-			$.ajax({
-				url : 'qnaMemberView.do',
-				type : 'GET',
-				data : {
-					qnaNum : qnaNum
-				},
-				dataType : 'html',
-				success : function(response) {
-					$('#qnaModalContent').html(response).show();
-				},
-				error : function(xhr, status, error) {
-					console.error(error);
-				}
-			});
-		});
-	</script> -->
-
 
 	<script>
 		$(document).ready(function() {

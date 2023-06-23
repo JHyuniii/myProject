@@ -76,8 +76,8 @@
 				<div class="row">
 					<div class="col-6 mt-4">
 						<div class="card card-todo">
-							<div class="col-12 text-center position-relative">
-								<label class="form-label" for="todoDate">작성했던 일정을 보고 싶은
+							<div class="col-12 text-center position-relative mt-2">
+								<label class="form-label" for="todoDate" style="font-size: 20px">작성했던 일정을 보고 싶은
 									날짜나, 새로 추가하고 싶은 날짜를 선택해주세요. 🗓</label> <input
 									class="mt-3 input-date-todo form-control mx-auto" id="todoDate"
 									pattern="\d{4}-\d{2}-\d{2}" required th:field="*{todoDate}"

@@ -51,11 +51,11 @@ thead th {
 			<div class="collapse navbar-collapse" id="navbarScroll">
 				<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
 					style="--bs-scroll-height: 100px;">
-					<li class="nav-item"><a class="nav-link"
+					<!-- <li class="nav-item"><a class="nav-link"
 						href="goalSetting.jsp">목표 설정하기</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="bodyInfoView.do">오늘 정보 기록하기</a></li>
-					<li class="nav-item"><a class="nav-link" href="todoList.do">TodoList</a></li>
+					<li class="nav-item"><a class="nav-link" href="todoList.do">TodoList</a></li> -->
 				</ul>
 				<div class="d-flex">
 					<c:if test="${sessionScope.id eq null }">

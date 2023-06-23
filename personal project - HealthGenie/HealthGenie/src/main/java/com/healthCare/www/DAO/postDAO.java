@@ -102,6 +102,7 @@ public class postDAO {
 		}
 		return list;
 	}
+	
 	//댓글 수 
 	public int commentCountDAO(int postNum) {
 		String sql = "select count(*) from comment where postNum = " + postNum;

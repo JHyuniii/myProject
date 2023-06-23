@@ -148,7 +148,7 @@
 
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script>
-	function limitIdLength() {
+		function limitIdLength() {
 			const idInput = $('#inputId');
 			if (idInput.val().length > 8) {
 				idInput[0].setCustomValidity("아이디는 최대 8글자까지 입력 가능합니다.");

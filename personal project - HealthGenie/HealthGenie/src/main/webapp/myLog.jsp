@@ -50,7 +50,7 @@
 						href="goalSetting.jsp">목표 설정하기</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="bodyInfoView.do">오늘 정보 입력하기</a></li>
-					<li class="nav-item"><a class="nav-link" href="todoList.do">TodoList</a>
+					<li class="nav-item"><a class="nav-link" href="todoList.jsp">TodoList</a>
 					</li>
 				</ul>
 				<div class="d-flex">

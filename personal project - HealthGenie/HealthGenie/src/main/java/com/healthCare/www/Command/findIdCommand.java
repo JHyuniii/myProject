@@ -24,7 +24,6 @@ public class findIdCommand implements Command{
 		dto.setBirth(birth);
 		
 		String result = dao.findIdDAO(dto);
-//		memberDTO memeberDTO = dao.findIdDAO(dto);
 		if(result != null) {
 			request.setAttribute("searchId", result);
 			request.setAttribute("idExistence", true);

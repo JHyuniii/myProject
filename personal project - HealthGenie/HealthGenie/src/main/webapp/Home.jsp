@@ -84,7 +84,7 @@
 													data-bs-dismiss="modal" aria-label="Close"></button>
 											</div>
 											<div class="modal-body">
-												<form action="login.do" method="post">
+												<form action="login.do" method="post" id="loginForm">
 													<div class="mb-3">
 														<label for="id" class="form-label">아이디</label> <input
 															type="text" class="form-control" id="id" name="id">
@@ -259,7 +259,7 @@
 
 
 	<div id="carouselExampleCaptions" class="carousel slide carousel-dark"
-		data-bs-ride="false">
+		data-bs-ride="carousel" data-bs-interval="4000">
 		<div class="carousel-indicators">
 			<button type="button" data-bs-target="#carouselExampleCaptions"
 				data-bs-slide-to="0" class="active" aria-current="true"
@@ -271,10 +271,6 @@
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<!-- <img src="./HomeIMG/HomeIMG.jpg" class="d-block home-c-img"
-					style="width: 100vw; height: 40vh;" data-bs-toggle="offcanvas"
-					data-bs-target="#offcanvasWithBothOptions"
-					aria-controls="offcanvasWithBothOptions"> -->
 				<div id="main_carousel" style="width: 100vw; height: 40vh;" data-bs-toggle="offcanvas"
 					data-bs-target="#offcanvasWithBothOptions"
 					aria-controls="offcanvasWithBothOptions">
@@ -291,8 +287,8 @@
 					style="width: 100vw; height: 40vh;" data-bs-toggle="offcanvas"
 					data-bs-target="#offcanvasWithBothOptions"
 					aria-controls="offcanvasWithBothOptions">
-				<div class="carousel-caption d-none d-md-block">
-					<h5>운동 정보 제공 및 관리</h5>
+				<div class="carousel-caption d-none d-md-block" style="font-size: 20px">
+					<h5><b>운동 정보 제공 및 관리</b></h5>
 					<p>운동 방법을 제공받고, 내 몸 상태를 편하게 기록하며 관리하세요.</p>
 				</div>
 			</div>
@@ -301,8 +297,8 @@
 					style="width: 100vw; height: 40vh;" data-bs-toggle="offcanvas"
 					data-bs-target="#offcanvasWithBothOptions"
 					aria-controls="offcanvasWithBothOptions">
-				<div class="carousel-caption d-none d-md-block">
-					<h5>넓은 소통의 기회</h5>
+				<div class="carousel-caption d-none d-md-block" style="font-size: 20px">
+					<h5><b>넓은 소통의 기회</b></h5>
 					<p>전용 커뮤니티에서 운동과 관련한 깊고 넓은 정보를 나눠보세요.</p>
 				</div>
 			</div>
@@ -319,8 +315,8 @@
 		</button>
 	</div>
 
-	<div class="container text-center mt-2">
-		<div class="alert alert-light" role="alert">원하는 부위를 클릭하여 운동 정보를
+	<div class="container text-center mt-3">
+		<div class="alert alert-light" role="alert" style="font-size: 20px">원하는 부위를 클릭하여 운동 정보를
 			확인해보세요! 👇🏻</div>
 	</div>
 

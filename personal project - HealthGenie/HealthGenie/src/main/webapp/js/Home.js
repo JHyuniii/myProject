@@ -130,4 +130,69 @@ function loadExercise(exerciseName) {
 	});
 }
 
+//관리자 로그인시 실행
+$(document).ready(function () {
+  let isSuperUser = false;
+
+  $("#id").on("focusout", function () {
+    let inputSuperId = $("#id").val();
+
+    $.ajax({
+      url: "idSuperCheck.do",
+      type: "post",
+      data: {
+        inputSuperId: inputSuperId,
+      },
+      dataType: "text",
+      success: function (result) {
+        if (result == 1) {
+          isSuperUser = true;
+        } else {
+          isSuperUser = false;
+        }
+      },
+      error: function () {
+        alert("오류가 발생했습니다. 다시 시도해주세요 :)");
+      },
+    });
+  });
+
+  $("#loginSubmitBtn").on("click", function (e) {
+    e.preventDefault();
+    let loginForm = $("#loginForm");
+    if (isSuperUser) {
+      loginForm.attr("action", "superLogin.do");
+    } else {
+      loginForm.attr("action", "login.do");
+    }
+
+    loginForm.submit();
+  });
+});
+
+//$('#id').on(
+//	'focusout',
+//	function() {
+//		let inputSuperId = $('#id').val();
+//		let loginForm = $("#loginForm");
+//		$.ajax({
+//			url: "idSuperCheck.do",
+//			type: "post",
+//			data: {
+//				"inputSuperId": inputSuperId
+//			},
+//			dataType: 'text',
+//			success: function(result) {
+//				if (result == 1) {
+//					console.log("result : " + result);
+//					loginForm.attr("action", "superLogin.do");
+//				} else {
+//					loginForm.attr("action", "login.do");
+//				}
+//			},
+//			error: function() {
+//				alert("오류가 발생했습니다. 다시 시도해주세요 :)");
+//			}
+//		})
+//	})
 

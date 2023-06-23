@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.healthCare.www.DAO.postDAO;
 import com.healthCare.www.DTO.postDTO;
 
-public class communityCommand implements Command{
+public class communityCommand implements Command {
 
 	@Override
 	public void excute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
