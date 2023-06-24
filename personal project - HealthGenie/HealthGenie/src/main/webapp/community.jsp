@@ -67,8 +67,10 @@ thead th {
 								onclick="location.href='logout.do'">로그아웃</button></li>
 
 					</c:if>
-					<li><button class="btn btn-outline-light"
-							onclick="location.href='myPage.jsp'">마이페이지</button></li>
+					<c:if test="${sessionScope.id ne null }">
+						<li><button class="btn btn-outline-light"
+								onclick="location.href='myPage.jsp'">마이페이지</button></li>
+					</c:if>
 				</div>
 			</div>
 		</div>

@@ -42,10 +42,10 @@ function loadExercise(exerciseName) {
         <ul class="list-group list-group-flush">
           <li class="list-group-item">준비물 : ${item.equipment}</li>
           <li class="list-group-item">자극 근육 : ${item.target}
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#muscleModal">
             ?
             </button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="muscleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">

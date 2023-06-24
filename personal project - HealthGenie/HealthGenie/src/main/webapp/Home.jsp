@@ -174,7 +174,7 @@
 							</ul></li>
 						<li class="nav-item"><a class="nav-link text-secondary"
 							href="#" style="font-size: 1.2rem;" data-bs-toggle="modal"
-							data-bs-target="#exampleModal">문의사항</a></li>
+							data-bs-target="#qnaModal">문의사항</a></li>
 					</c:when>
 					<c:otherwise>
 						<li class="nav-item dropdown"><a
@@ -211,7 +211,7 @@
 	</div>
 
 	<!-- qna Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1"
+	<div class="modal fade" id="qnaModal" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">

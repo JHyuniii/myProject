@@ -65,19 +65,21 @@ th {
 			<div class="collapse navbar-collapse" id="navbarScroll">
 				<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
 					style="--bs-scroll-height: 100px;">
-					<li class="nav-item"><a class="nav-link"
+					<!-- <li class="nav-item"><a class="nav-link"
 						href="goalSetting.jsp">목표 설정하기</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="bodyInfoView.do">오늘 정보 기록하기</a></li>
 					<li class="nav-item"><a class="nav-link" href="todoList.jsp">TodoList</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="interestList.do">운동 저장 목록 🛒</a></li>
+						href="interestList.do">운동 저장 목록 🛒</a></li> -->
 				</ul>
 				<div class="d-flex">
-					<li><button class="btn btn-outline-light"
-							onclick="location.href='logout.do'">로그아웃</button></li>
-					<li><button class="btn btn-outline-light"
-							onclick="location.href='myPage.jsp'">마이페이지</button></li>
+					<c:if test="${sessionScope.id ne null }">
+						<li><button class="btn btn-outline-light"
+								onclick="location.href='logout.do'">로그아웃</button></li>
+						<li><button class="btn btn-outline-light"
+								onclick="location.href='myPage.jsp'">마이페이지</button></li>
+					</c:if>
 				</div>
 			</div>
 		</div>
@@ -186,7 +188,8 @@ th {
 						<c:if test="${sessionScope.id eq list.userId }">
 							<td><button type="button"
 									class="btn btn-outline-secondary btn-out" id="commentDeleteBtn">삭제</button></td>
-							<input type="hidden" id="hiddenCommentNum" value="${list.commentNum }">
+							<input type="hidden" id="hiddenCommentNum"
+								value="${list.commentNum }">
 						</c:if>
 					</tr>
 				</c:forEach>
@@ -295,8 +298,7 @@ th {
 				}
 			});
 		});
-		
-		
+
 		//게시물 삭제
 		$('#postDeleteBtn').on('click', function() {
 			let postNum = $('#hiddenPostNum').val();
