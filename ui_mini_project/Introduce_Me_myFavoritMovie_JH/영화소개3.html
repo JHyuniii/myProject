@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body::before {
+            background-image: url("resource/img/indexImg/bodyBack2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+            opacity: 0.5;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        #character {
+            position: relative;
+        }
+
+        #character div {
+            position: absolute;
+        }
+
+        #닉 {
+            right: 550px;
+            top: 200px;
+        }
+
+        #주디 {
+            right: 900px;
+            top: 150px;
+        }
+
+        #가젤 {
+            right: 200px;
+            top: 100px;
+            z-index: 1;
+        }
+        
+        #나무늘보 {
+            left: 100px;
+            top: 400px;
+            z-index: 1;
+        }
+
+        #벨웨더 {
+            left: 450px;
+            top: 250px;
+        }
+
+        #라이온하트 {
+            right: 400px;
+            top: 300px;
+            z-index: 99;
+        }
+
+        img {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+        }
+
+        #닉 img:hover{
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+        #주디 img:hover{
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            cursor: pointer;
+
+        }
+        #가젤 img:hover{
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+        #벨웨더 img:hover{
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+        #라이온하트 img:hover{
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+        #나무늘보 img:hover{
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+
+        #next>button {
+            line-height: 40px;
+            border-radius: 25px;
+            width: 180px;
+            height: 40px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            top: 30px;
+            right: 30px;
+            position: absolute;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+            font-size: 20px;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        #next>button:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+        }
+
+        #goIndex2>button {
+            line-height: 40px;
+            border-radius: 25px;
+            width: 140px;
+            height: 40px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+            position: absolute;
+            z-index: 1;
+            top: 30px;
+            left: 35px;
+        }
+
+        #goIndex2>button:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="goIndex2"><button onclick="goIndex()">Go Index</button></div>
+    <div id="character">
+        <div id="닉"><img src="resource/img/movieImg/닉.png" width="600px" onclick="character(0)"></div>
+        <div id="주디"><img src="resource/img/movieImg/주디.png" width="400px" onclick="character(1)"></div>
+        <div id="나무늘보"><img src="resource/img/movieImg/나무늘보.png" width="450px" onclick="character(2)"></div>
+        <div id="가젤"><img src="resource/img/movieImg/가젤.png" width="250px" onclick="character(3)"></div>
+        <div id="벨웨더"><img src="resource/img/movieImg/벨웨더.png" width="350px" onclick="character(4)"></div>
+        <div id="라이온하트"><img src="resource/img/movieImg/라이온하트.png" width="350px" onclick="character(5)"></div>
+    </div>
+    <div id="next">
+        <button onclick="go();">예고편 보러가기 -></button>
+    </div>
+
+    <script>
+        let characterHtml = ["닉.html", "주디.html", "나무늘보.html", "가젤.html", "벨웨더.html", "라이온하트.html"];
+        function character(num) {
+            location.href = characterHtml[num];
+        }
+        function go() {
+            location.href = "예고.html";
+        }
+        function goIndex() {
+        location.href = "index.html";
+    }
+    </script>
+</body>
+
+</html>

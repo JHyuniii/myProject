@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body::before {
+            background-image: url("resource/img/indexImg/bodyBack2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+            opacity: 0.2;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        #character {
+            position: relative;
+        }
+
+        #character div {
+            position: absolute;
+        }
+
+        #닉 {
+            right: 550px;
+            top: 250px;
+        }
+
+        #talk {
+            width: 600px;
+            position: absolute;
+            top: 400px;
+            right: 100px;
+            font-family: 'Stylish', sans-serif;
+            font-size: 50px;
+            display: none;
+        }
+
+        #info {
+            font-family: 'Do Hyeon', sans-serif;
+            position: absolute;
+            left: 150px;
+            font-size: 60px;
+            top: 150px;
+        }
+
+        span::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 8px;
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            background: rgba(200, 125, 220, .6);
+        }
+
+        #info:hover span::after {
+            width: 100%;
+            transition: width .4s;
+        }
+
+        span {
+            position: relative;
+            font-weight: bold;
+        }
+
+        #back {
+            border-radius: 25px;
+            width: 140px;
+            height: 40px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+            position: absolute;
+            z-index: 1;
+            top: 30px;
+            left: 35px;
+        }
+
+        #back:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="character">
+        <div id="닉"><img src="resource/img/movieImg/닉.png" width="700px" onmouseover="display_talk()" onmouseout="displayOut_talk()"></div>
+    </div>
+    <div id="talk">
+        악한 모습 보이지마 주디
+    </div>
+    <div id="info">
+        숨 쉬는 거 빼고는 <span>다 거짓말!</span><br>현재로서는 주디의 유일한 파트너
+    </div>
+    <button id="back" onClick="history.go(-1)";>Back</button>
+
+    <script>
+        let t = document.getElementById("talk");
+        function display_talk() {
+            t.style.display = 'block';
+        }
+        function displayOut_talk() {
+            t.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

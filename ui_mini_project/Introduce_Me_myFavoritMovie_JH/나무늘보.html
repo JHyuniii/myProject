@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body::before {
+            background-image: url("resource/img/indexImg/bodyBack2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+            opacity: 0.2;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        #character {
+            position: relative;
+        }
+
+        #character div {
+            position: absolute;
+        }
+
+        #나무늘보 {
+            left: 100px;
+            top: 400px;
+        }
+
+        #back {
+            border-radius: 25px;
+            width: 140px;
+            height: 40px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+            position: absolute;
+            z-index: 1;
+            top: 30px;
+            left: 35px;
+        }
+
+        #back:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+        }
+
+        #video {
+            position: absolute;
+            right: 80px;
+            top: 270px;
+        }
+
+        #talk {
+            width: 500px;
+            position: absolute;
+            top: 350px;
+            left: 550px;
+            font-family: 'Nanum Pen Script', cursive;
+            font-size: 50px;
+        }
+
+        #info {
+            font-family: 'Do Hyeon', sans-serif;
+            position: absolute;
+            right: 80px;
+            font-size: 60px;
+            top: 70px;
+        }
+
+        span::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 8px;
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            background: rgba(200, 125, 220, .6);
+        }
+
+        #info:hover span::after {
+            width: 100%;
+            transition: width .4s;
+        }
+
+        span {
+            position: relative;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="character">
+        <div id="나무늘보"><img src="resource/img/movieImg/나무늘보.png" width="600px" onmouseover="display_talk()" onmouseout="displayOut_talk()"></div>
+    </div>
+    <div id="talk">
+        자..아 - 암..... 까 ----- 안..... 마..... ㅇ--.......안
+    </div>
+    <div id="info">
+        우리가 생각하는 나무늘보 그 자체,<br>분량은 많지 않지만 영화 속 관객의 <span>웃음 포인트!</span>
+    </div>
+    <div id="video">
+        <iframe width="660" height="415" src="https://www.youtube.com/embed/Z6x5bKOqTek" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+    <button id="back" onClick="history.go(-1)" ;>Back</button>
+
+    <script>
+        let t = document.getElementById("talk");
+        function display_talk() {
+            t.style.display = 'block';
+        }
+        function displayOut_talk() {
+            t.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

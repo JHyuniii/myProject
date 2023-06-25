@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("resource/img/indexImg/indexBack.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        #left {
+            background-image: url("resource/img/indexImg/bodyBack2.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 300px 300px 300px 300px;
+            position: absolute;
+            left: 400px;
+            top: 300px;
+            cursor: pointer;
+        }
+
+        #me {
+            display: inline-block;
+            border-radius: 300px 300px 300px 300px;
+            overflow: hidden;
+            position: absolute;
+            top: 80px;
+            left: 300px;
+            background-color: #E0F2F7;
+            z-index: 99;
+            left: 900px;
+            top: 300px;
+            cursor: pointer;
+        }
+
+        #me::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 10;
+            display: block;
+            content: '';
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, .2);
+            border-radius: 100%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+
+        #me:hover::before {
+            -webkit-animation: circle .75s;
+            animation: circle .75s;
+        }
+
+        @-webkit-keyframes circle {
+            0% {
+                opacity: 1;
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            100% {
+                width: 200%;
+                height: 200%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes circle {
+            0% {
+                opacity: 1;
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            100% {
+                width: 200%;
+                height: 200%;
+                opacity: 0;
+            }
+        }
+
+        #left::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 10;
+            display: block;
+            content: '';
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, .2);
+            border-radius: 100%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+
+        #left:hover::before {
+            -webkit-animation: circle .75s;
+            animation: circle .75s;
+        }
+
+        #left:hover {
+            background-image: url('resource/img/indexImg/indexBack2.jpg');
+        }
+
+        #movie {
+            position: absolute;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 80px;
+            left: 460px;
+            top: 230px;
+            font-style: italic;
+            display: none;
+            font-weight: bold;
+        }
+
+        #introduce {
+            position: absolute;
+            font-family: 'Ubuntu', sans-serif;
+            font-style: italic;
+            font-size: 80px;
+            left: 960px;
+            top: 230px;
+            z-index: 100;
+            font-weight: bold;
+            display: none;
+        }
+
+        Result Skip Results Iframe EDIT ON #tryBody {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        #try {
+            width: 22ch;
+            animation: typing 5s steps(22), blink .5s step-end infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            font-family: monospace;
+            font-size: 2em;
+
+            position: absolute;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 130px;
+            left: 400px;
+            top: 40px;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tryBody">
+        <div id="try">Try choose you want!</div>
+    </div>
+    <div id="left" onmouseover="leftPhoto(1)" onmouseout="leftPhoto(2)" onclick="movieGo()"
+        style="width: 600px; height: 600px;">
+    </div>
+    <div id="me" onmouseover="mePhoto(1)" onmouseout="mePhoto(2)" onclick="introduceGo()">
+        <img id="me1" src="resource/img/indexImg/indexMe.png" style="width: fit-content; width: 600px;" onclick="introduceGo()">
+    </div>
+    <div id="movie">Movie Review</div>
+    <div id="introduce">Introduce Me</div>
+</body>
+
+<script>
+    function mePhoto(num) {
+        if (num === 1) {
+            document.getElementById("me1").setAttribute('src', 'resource/img/indexImg/indexMe2.png');
+            document.getElementById("introduce").style.display = 'block';
+        }
+        else if (num === 2) {
+            document.getElementById("me1").setAttribute('src', 'resource/img/indexImg/indexMe.png');
+            document.getElementById("introduce").style.display = 'none';
+        }
+    }
+
+    function leftPhoto(num) {
+        if (num === 1) {
+            document.getElementById("movie").style.display = 'block';
+        }
+        else if (num === 2) {
+            document.getElementById("movie").style.display = 'none';
+        }
+    }
+
+    function movieGo() {
+        location.href = "영화 소개1.html";
+    }
+
+    function introduceGo() {
+        location.href = "자기소개.html";
+    }
+</script>
+
+</html>

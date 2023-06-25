@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Document</title>
+    <style>
+        body::before {
+            background-image: url("resource/img/indexImg/bodyBack2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+            opacity: 0.2;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        #character {
+            position: relative;
+        }
+
+        #character div {
+            position: absolute;
+        }
+
+        #벨웨더 {
+            left: 450px;
+            top: 300px;
+        }
+
+        #back {
+            border-radius: 25px;
+            width: 140px;
+            height: 40px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+            position: absolute;
+            z-index: 1;
+            top: 30px;
+            left: 35px;
+        }
+
+        #back:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+        }
+
+        #talk {
+            width: 600px;
+            position: absolute;
+            top: 550px;
+            right: 400px;
+            font-family: 'Cute Font', cursive;
+            font-size: 60px;
+        }
+
+        #info {
+            font-family: 'Do Hyeon', sans-serif;
+            position: absolute;
+            right: 200px;
+            font-size: 60px;
+            top: 100px;
+        }
+
+        span::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 8px;
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            background: rgba(200, 125, 220, .6);
+        }
+
+        #info:hover span::after {
+            width: 100%;
+            transition: width .4s;
+        }
+
+        span {
+            position: relative;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="character">
+        <div id="벨웨더"><img src="resource/img/movieImg/벨웨더.png" width="450px" onmouseover="display_talk()" onmouseout="displayOut_talk()"></div>
+    </div>
+    <div id="talk">
+        작은 동물들끼리 서로 뭉쳐야죠, 그쵸?
+    </div>
+    <div id="info">
+        주토피아 부사장이지만, 약한 동물이라 차별받는듯한 모습을 보인다.<br>
+        자신과 비슷한 주디에게 호의적인데, <span>하지만 그녀의 속마음은?</span>
+    </div>
+    <button id="back" onClick="history.go(-1)" ;>Back</button>
+
+    <script>
+        let t = document.getElementById("talk");
+        function display_talk() {
+            t.style.display = 'block';
+        }
+        function displayOut_talk() {
+            t.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

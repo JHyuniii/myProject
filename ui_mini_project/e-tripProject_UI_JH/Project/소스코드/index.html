@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=K2D&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+            font-family: 'ONE-Mobile-POP';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'PyeongChangPeace-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'KIMM_Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'TheJamsil5Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Godo';
+            font-style: normal;
+            font-weight: 400;
+            src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
+        }
+
+        section {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #moveDown {
+            position: absolute;
+            z-index: 1;
+            bottom: 30px;
+            left: 800px;
+        }
+
+        .blinking {
+            -webkit-animation: blink 1.5s ease-in-out infinite alternate;
+            -moz-animation: blink 1.5s ease-in-out infinite alternate;
+            animation: blink 1.5s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        input[id="menuicon"] {
+            display: none;
+        }
+
+        input[id="menuicon"]~label {
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            position: fixed;
+            right: 50px;
+            top: 40px;
+        }
+
+        input[id="menuicon"]:checked+label {
+            z-index: 2;
+            display: none;
+        }
+
+        input[id="menuicon"]:checked~.menuBtn_off {
+            z-index: 2;
+            display: block;
+        }
+
+        input[id="menuicon"]:not(:checked)~.menuBtn_off {
+            z-index: 2;
+            display: none;
+        }
+
+        div[class="sidebar"] {
+            width: 100%;
+            height: 100%;
+            background: #ecb789;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            z-index: 1;
+            transition: all .35s;
+        }
+
+        input[id="menuicon"]:checked~label~div {
+            right: 0;
+        }
+
+        #menuBody {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .menuBtn {
+            position: absolute;
+            font-family: 'ONE-Mobile-POP';
+            font-size: 40px;
+            border-radius: 100px 100px 100px 100px;
+            line-height: 150px;
+            text-align: center;
+            background-color: #FFB471;
+            top: 20px;
+        }
+
+        .menuBtn_off {
+            font-family: 'ONE-Mobile-POP';
+            font-size: 50px;
+            border-radius: 100px 100px 100px 100px;
+            line-height: 150px;
+            text-align: center;
+            background-color: #F5E2D4;
+        }
+
+        .menuBtn:hover {
+            background-color: #ffb37167;
+        }
+
+        .menuBtn_off:hover {
+            background-color: #ffb37167;
+        }
+
+        #index_main_text {
+            position: absolute;
+            font-size: 200px;
+            left: 650px;
+            top: 200px;
+            font-family: 'Lilita One', cursive;
+            z-index: 13;
+        }
+
+        #index_circle {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background-color: #F5E2D4;
+            border-radius: 300px 300px 300px 300px;
+            left: 400px;
+            top: 130px;
+            z-index: 10;
+        }
+
+        #index_circle:hover {
+            transition: 0.5s ease-out;
+            opacity: 0;
+        }
+
+        #index_circle:not(:hover) {
+            transition: 0.5s ease-out;
+        }
+
+        #index_circle:hover~#index_main_text span {
+            opacity: 0;
+            transition: 0.5s ease-out;
+        }
+
+        #index_circle:not(hover)~#index_main_text span {
+            transition: 0.5s ease-out;
+        }
+
+        .circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: #97dbd2;
+            opacity: 0.5;
+            transform: translate(-50%, -50%);
+            transition: 0.03s;
+        }
+
+        #text {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            border-radius: 300px 300px 300px 300px;
+            text-align: center;
+            left: 400px;
+            top: 130px;
+            background-color: #f0d8cece;
+        }
+
+        #inner_text {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            left: 0;
+            top: 55px;
+            font-family: 'ONE-Mobile-POP';
+            font-size: 60px;
+        }
+
+        #text span {
+            font-style: italic;
+            font-family: 'PyeongChangPeace-Bold';
+            color: #4cbadf;
+        }
+
+        #index_이름설명 {
+            font-family: 'KIMM_Bold';
+            font-size: 50px;
+            position: absolute;
+            bottom: 250px;
+            left: 400px;
+            opacity: 0.5;
+        }
+
+        #sideBar_halfBack {
+            background-color: #F5E2D4;
+            position: absolute;
+            width: 800px;
+            height: 100%;
+            left: 0;
+        }
+
+        #sideBar_Back {
+            position: relative;
+            width: 100%;
+            height: 1000px;
+        }
+
+        #sideBar_Text {
+            position: absolute;
+            font-family: 'Lilita One', cursive;
+            font-size: 150px;
+            color: white;
+            left: 140px;
+            top: 300px;
+            text-shadow: 3px 3px 3px gray;
+        }
+
+        #sideBar_정보 {
+            position: absolute;
+            font-family: 'TheJamsil5Bold';
+            font-size: 20px;
+            opacity: 0.5;
+            bottom: 500px;
+            right: 250px;
+        }
+
+        ul {
+            list-style: none;
+            display: block;
+        }
+
+        li {
+            font-family: 'TheJamsil5Bold';
+        }
+
+        li:hover {
+            color: #FFB471;
+        }
+
+        #index_mypageBigMenu a:hover {
+            opacity: 0.5;
+        }
+
+        #index_bigMenu {
+            position: absolute;
+            padding: 0;
+            right: 630px;
+            top: 160px;
+            font-size: 60px;
+        }
+
+        #index_mypageMenu {
+            display: none;
+            position: absolute;
+            width: 500px;
+            left: 280px;
+            top: 160px;
+            font-size: 40px;
+            padding-left: 100px;
+        }
+
+        #index_mypageMenu a {
+            margin: 30px;
+            text-decoration: none;
+            color: #FFB471;
+        }
+
+        #index_bigMenu li {
+            margin: 50px;
+            cursor: pointer;
+        }
+
+        #index_mypageMenu a {
+            display: block;
+        }
+
+        #index_mypageBigMenu:hover #index_mypageMenu {
+            display: block;
+        }
+
+        .index_imgText {
+            font-family: 'KIMM_Bold';
+            font-size: 25px;
+            text-align: center;
+            width: 400px;
+        }
+
+        .hideme {
+            display: inline-block;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .hideme img {
+            width: 200px;
+            position: absolute;
+            z-index: 1;
+            left: 100px;
+            top: -250px;
+        }
+
+        .index_btn button {
+            position: absolute;
+            font-family: 'Godo';
+            font-size: 30px;
+            border: none;
+            opacity: 0.6;
+            cursor: pointer;
+            bottom: 170px;
+            transition: all ease 1s;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .index_btn button:nth-of-type(1) {
+            left: 600px;
+        }
+
+        .index_btn button:nth-of-type(2) {
+            right: 700px;
+        }
+
+        #index_first_btn {
+            position: absolute;
+            left: 780px;
+            bottom: 200px;
+        }
+
+        .index_btn button:hover {
+            transform: rotate(10deg);
+        }
+
+        .first {
+            position: absolute;
+            left: 300px;
+            bottom: 450px;
+        }
+
+        .second {
+            position: absolute;
+            left: 710px;
+            bottom: 470px;
+        }
+
+        .third {
+            position: absolute;
+            right: 400px;
+            bottom: 450px;
+        }
+
+        #sidebar_login {
+            position: absolute;
+            right: 250px;
+            font-family: 'Godo';
+            font-size: 20px;
+            top: 100px;
+            color: black;
+            text-shadow: 3px 3px 3px gainsboro;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="menuBody">
+        <input type="checkbox" id="menuicon">
+        <label for="menuicon" class="menuBtn" style="width: 150px; height: 150px;" onclick="sideBarOn()">Menu</label>
+        <label for="menuicon" class="menuBtn_off" style="width: 150px; height: 150px;" onclick="sidebarOff()">X</label>
+        <div class="sidebar">
+            <div id="sideBar_Back" style="background-color: white;">
+                <div id="sidebar_login" style="cursor: pointer;">🔐로그인&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔒회원가입</div>
+                <ul id="index_bigMenu">
+                    <li><a href="#"></a>Home</li>
+                    <li id="index_mypageBigMenu"><a href="#"></a>MyPage
+                        <div id="index_mypageMenu">
+                            <a href="#">📍여행 관심 목록</a>
+                            <a href="#">📚여행 기억장소</a>
+                        </div>
+                    </li>
+                    <li><a href="#"></a>Search</li>
+                    <li><a href="#"></a>공지사항</li>
+                </ul>
+                <div id="sideBar_halfBack">
+                    <div id="sideBar_Text" style="cursor: pointer;" onclick="window.location.reload()">E-TRIP</div>
+                    <div id="sideBar_정보" style="cursor: pointer;">
+                        💬etrip@naver.com | 📞02-1234-5678
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section style="background-color: #A8DFF1">
+        <div id="moveDown" class="click blinking" style="cursor: pointer;"><img src="/Project/img/moveDown.png" width="200px"></div>
+        <div id="index_circle"></div>
+        <div id="text">
+            <div id="inner_text">
+                <strong><span>E</span>njoyable</strong><br>
+                <strong><span>E</span>asy</strong><br>
+                <strong><span>E</span>xpand</strong><br>
+                <strong><span>E</span>very</strong><br>
+            </div>
+        </div>
+
+        <div id="index_main_text">
+            <span>E-</span>TRIP
+        </div>
+
+        <div id="index_이름설명">
+            E-TRIP은 여행의 행복을 극대화 시켜줍니다.
+        </div>
+    </section>
+
+    <section style="background-color:#F5E2D4">
+        <div class="container" id="container1">
+            <div class="hideme first" data-aos="fade-up" data-aos-offset="0" data-aos-delay="50"
+                data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                <img src="/Project/img/index_지도.png" width="100px">
+                <div class="index_imgText">나만의 지도로 채우며<br>뿌듯함을 느끼고</div>
+            </div>
+            <div class="hideme second" data-aos="fade-up" data-aos-offset="0" data-aos-delay="150"
+                data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                <img src="/Project/img/index_다이어리.png" width="100px">
+                <div class="index_imgText">소중한 추억도 저장하세요</div>
+            </div>
+            <div class="hideme third" data-aos="fade-up" data-aos-offset="0" data-aos-delay="250"
+                data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                <img src="/Project/img/index_공유.png" width="100px">
+                <div class="index_imgText">여행을 고민중인 누군가에겐<br>도움이 됩니다</div>
+            </div>
+        </div>
+        <div class="index_btn">
+            <button id="index_first_btn">기억 장소 바로가기</button>
+        </div>
+        <div id="moveDown" class="click blinking" style="cursor: pointer;"><img src="/Project/img/moveDown.png" width="200px"></div>
+    </section>
+
+    <section style="background-color:#D0DAE4">
+        <div class="container" id="container2">
+            <div class="hideme first" data-aos="fade-up" data-aos-offset="0" data-aos-delay="50"
+                data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                <img src="/Project/img/index_찾기.png" width="100px">
+                <div class="index_imgText">여행 계획 짜기가<br>힘들고 고민될 때</div>
+            </div>
+            <div class="hideme second" data-aos="fade-up" data-aos-offset="0" data-aos-delay="150"
+                data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                <img src="/Project/img/index_관심.png" width="100px">
+                <div class="index_imgText">내 관심 목록에 편하게 담고,</div>
+            </div>
+            <div class="hideme third" data-aos="fade-up" data-aos-offset="0" data-aos-delay="250"
+                data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                <img src="/Project/img/index_계획.png" width="100px">
+                <div class="index_imgText">체크리스트도 만들며<br>간편하게 여행을 계획해보세요</div>
+            </div>
+        </div>
+        <div class="index_btn">
+            <button>관심 목록 바로가기</button>
+            <button>검색 바로가기</button>
+        </div>
+    </section>
+
+    <div class="circle"></div>
+</body>
+
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+    AOS.init();
+
+    let moveDown = document.querySelectorAll(".click");
+
+    let s = document.querySelectorAll("section");
+    let f_s = s[1].offsetTop;
+    let s_s = s[2].offsetTop;
+
+    moveDown[0].onclick = function () {
+        window.scroll({ top: f_s, behavior: "smooth" });
+    }
+    moveDown[1].onclick = function () {
+        window.scroll({ top: s_s, behavior: "smooth" });
+    }
+
+    const circle = document.querySelector(".circle");
+
+    document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용해 움
+
+        const mouseX = e.clientX;
+
+        const mouseY = e.clientY;
+
+        circle.style.left = mouseX + 'px';
+
+        circle.style.top = mouseY + 'px';
+
+    });
+
+    function sideBarOn() {
+        document.getElementById("index_circle").style.display = 'none';
+        document.getElementById("text").style.display = 'none';
+        document.getElementById("index_main_text").style.display = 'none';
+        document.getElementById("index_이름설명").style.display = 'none';
+        document.getElementById("moveDown").style.display = 'none';
+        document.getElementById("container1").style.display = 'none';
+        document.getElementById("container2").style.display = 'none';
+    }
+    function sidebarOff() {
+        document.getElementById("index_circle").style.display = 'block';
+        document.getElementById("text").style.display = 'block';
+        document.getElementById("index_main_text").style.display = 'block';
+        document.getElementById("index_이름설명").style.display = 'block';
+        document.getElementById("moveDown").style.display = 'block';
+        document.getElementById("container1").style.display = 'block';
+        document.getElementById("container2").style.display = 'block';
+    }
+</script>
+
+</html>

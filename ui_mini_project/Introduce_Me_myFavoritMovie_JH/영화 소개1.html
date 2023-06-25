@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body::before {
+            background-image: url("resource/img/indexImg/bodyBack2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+            opacity: 0.8;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        #gamePhoto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        table {
+            padding: 0;
+            border-spacing: 0px;
+            border: 0;
+            border-collapse: collapse;
+            border-style: none;
+
+            position: absolute;
+            right: 100px;
+        }
+
+        td,
+        tr {
+            padding: 0px 2px;
+            cursor: pointer;
+        }
+
+        td:hover {
+            background-color: rgba(220, 220, 220, 0.719);
+        }
+
+        #Q {
+            position: absolute;
+            z-index: 1;
+            left: 150px;
+            border-radius: 30px 30px 30px 30px;
+            top: 110px;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        #btn {
+            border: none;
+            border-radius: 30px 30px 30px 30px;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+            left: 600px;
+            top: 400px;
+            z-index: 1;
+            position: absolute;
+        }
+
+        #btn {
+            line-height: 40px;
+            border-radius: 25px;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+        }
+
+        #btn:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+        }
+
+        #goIndex2>button {
+            line-height: 40px;
+            border-radius: 25px;
+            width: 140px;
+            height: 40px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+            position: absolute;
+            z-index: 1;
+            top: 30px;
+            left: 35px;
+        }
+
+        #goIndex2>button:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gamePhoto">
+        <div id="goIndex2"><button onclick="goIndex()">Go Index</button></div>
+        <div id="Q" align="right">
+            <div>
+                <h2 style="font-size: 70px; text-align: center;">제가 가장 좋아하는 영화는<br>무슨 영화일까요?</h2>
+            </div>
+        </div>
+        <button onclick="check()" id="btn">정답 보러 가기</button>
+        <table style="width: 900px; height: 650px;" border="1">
+            <tr>
+                <td onclick="photoShow(1)" id="one" style="background-repeat: no-repeat; background-size: cover;"></td>
+                <td onclick="photoShow(2)" id="two" style="background-repeat: no-repeat; background-size: cover;"></td>
+                <td onclick="photoShow(3)" id="three" style="background-repeat: no-repeat; background-size: cover;">
+                </td>
+            </tr>
+            <tr>
+                <td onclick="photoShow(4)" id="four" style="background-repeat: no-repeat; background-size: cover;"></td>
+                <td onclick="photoShow(5)" id="five" style="background-repeat: no-repeat; background-size: cover;"></td>
+                <td onclick="photoShow(6)" id="six" style="background-repeat: no-repeat; background-size: cover;"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function photoShow(num) {
+            if (num == 1) { document.getElementById("one").style.backgroundImage = "url('resource/img/movieImg/1.jpg')" }
+            else if (num == 2) { document.getElementById("two").style.backgroundImage = "url('resource/img/movieImg/2.jpg')" }
+            else if (num == 3) { document.getElementById("three").style.backgroundImage = "url('resource/img/movieImg/3.jpg')" }
+            else if (num == 4) { document.getElementById("four").style.backgroundImage = "url('resource/img/movieImg/4.jpg')" }
+            else if (num == 5) { document.getElementById("five").style.backgroundImage = "url('resource/img/movieImg/5.jpg')" }
+            else if (num == 6) { document.getElementById("six").style.backgroundImage = "url('resource/img/movieImg/6.jpg')" }
+        }
+
+        function check() {
+            location.href = "영화소개2.html";
+        }
+
+        function goIndex() {
+        location.href = "index.html";
+    }
+    </script>
+</body>
+
+</html>

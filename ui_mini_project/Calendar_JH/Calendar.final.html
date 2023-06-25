@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>달력</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .CalendarBody {
+            position: relative;
+        }
+
+        .letterImg {
+            position: absolute;
+            top: 40px;
+            left: 640px;
+        }
+
+        td {
+            width: 80px;
+            height: 80px;
+            font-size: 50px;
+        }
+
+        .Calendar {
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+            margin: 0 auto;
+
+            top: 130px;
+            left: 630px;
+            position: absolute;
+            border: 5px solid gainsboro;
+            border-radius: 10px 10px 10px 10px;
+            padding: 20px;
+
+            background-color: white;
+        }
+
+        .Calendar>thead>tr:first-child>td {
+            font-weight: bold;
+            font-size: 60px;
+        }
+
+        .Calendar>thead>tr:last-child>td {
+            background-color: rgb(243, 240, 240);
+            color: black;
+            border-radius: 10px 10px 10px 10px;
+            font-size: 30px;
+            font-family: 'Tilt Neon', cursive;
+            font-weight: bold;
+        }
+
+        .pastDay {
+            background-color: lightgray;
+        }
+
+        .today {
+            background-color: rgb(250, 198, 207);
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .futureDay {
+            background-color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        .futureDay.choiceDay,
+        .today.choiceDay {
+            background-color: #3E85EF;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #nowdatebt {
+            display: none;
+        }
+
+        label {
+            color: pink;
+            position: relative;
+            display: inline-block;
+        }
+
+        #text {
+            position: absolute;
+            left: 250px;
+            font-size: 25px;
+            font-family: 'Jua', sans-serif;
+            padding: 10px;
+            width: 350px;
+            background-color: rgb(243, 203, 210);
+            border-radius: 10px 10px 10px 10px;
+            display: none;
+        }
+
+        #label:hover #text {
+            display: block;
+        }
+
+        #label:hover label {
+            color: hotpink;
+        }
+
+        #letterImgText {
+            width: 1000px;
+            height: 40px;
+            display: inline-block;
+            position: absolute;
+            font-family: 'Jua', sans-serif;
+            left: 90px;
+            bottom: 25px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .blinking {
+            -webkit-animation: blink 1.5s ease-in-out infinite alternate;
+            -moz-animation: blink 1.5s ease-in-out infinite alternate;
+            animation: blink 1.5s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <script>
+
+        //페이지 로드 될때 실행 
+        window.onload = function () { 
+            bodyCalendar(); 
+            backPhoto(nowMonth.getMonth() + 1);
+        }
+        
+        let nowMonth = new Date();  // 페이지에 로드되는 달을 저장할 변수
+
+        let today = new Date();     // 오늘 날짜 표시를 위해 만든 변수
+        
+        //달력 골격
+        function bodyCalendar() {
+            let firstDay = new Date(nowMonth.getFullYear(), nowMonth.getMonth(), 1); //달의 첫날
+            let lastDay = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, 0); //달의 마지막 날
+            
+            let table_Calendar = document.querySelector(".Calendar > tbody"); // table = `<table border = "1">`
+                
+                document.getElementById("calYear").innerText = nowMonth.getFullYear();
+                document.getElementById("calMonth").innerText = twoString(nowMonth.getMonth() + 1);
+                
+                while (table_Calendar.rows.length > 0) {    //이전 열이 남아있으면 초기화 해주는 과정!
+                    table_Calendar.deleteRow(table_Calendar.rows.length - 1);
+                }
+                
+                let newRow = table_Calendar.insertRow();        // 첫번째 행 추가           
+                
+                for (let j = 0; j < firstDay.getDay(); j++) {  // 달의 첫 요일만큼 공백으로 채워주기
+                    let nowColumn = newRow.insertCell(); //.insertCell = 행에 열 삽입
+                }
+                
+                for (let i = firstDay; i <= lastDay; i.setDate(i.getDate() + 1)) {   //달력에 날짜 채워넣기 
+                    let nowColumn = newRow.insertCell();        // 새 열을 추가하고
+                    nowColumn.innerText = twoString(i.getDate());      // 추가한 열에 날짜 입력
+                    
+                    if (i.getDay() == 0) {                 // i.getDay()==0 이면 일요일
+                        nowColumn.style.color = "#DC143C";
+                    }
+                    if (i.getDay() == 6) {                 // i.getDay()==0 이면 토요일
+                        nowColumn.style.color = "#0000CD";
+                        newRow = table_Calendar.insertRow();    //토요일=한주의 끝, 새로운 행 추가
+                    }
+                    
+                    if (i.getFullYear() == today.getFullYear() && i.getMonth() == today.getMonth() && i.getDate() == today.getDate()) { // 오늘 날짜에 포인트를 주기 위해 만듬         
+                        nowColumn.className = "today";
+                    }
+                }
+            }
+            
+        // 이전달 이동 버튼
+        function beforMonth() {
+            nowMonth = new Date(nowMonth.getFullYear(), nowMonth.getMonth() - 1, nowMonth.getDate());
+            //밑 function 3개는 새로 설정한 날짜로 다시 달력이 로드되도록 함
+            bodyCalendar();
+            backPhoto(nowMonth.getMonth() + 1);
+        }
+
+        // 다음달 이동 버튼
+        function afterMonth() {
+            nowMonth = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, nowMonth.getDate());
+            //밑 function 3개는 새로 설정한 날짜로 다시 달력이 로드되도록 함
+            bodyCalendar();
+            backPhoto(nowMonth.getMonth() + 1);
+        }
+
+        // 한자리 숫자 월,일을 0을 붙여 2자리 수로 만들어주기
+        function twoString(value) {
+            if (value < 10) {
+                value = "0" + value;
+                return value;
+            }
+            return value;
+        }
+
+        //현재 날짜 가는 버튼
+        function nowdate() {
+            nowMonth = new Date(); //현재 날짜로 설정하여 달력 재로드
+            bodyCalendar();
+            backPhoto(nowMonth.getMonth() + 1);
+        }
+
+        //편지 사진
+        function image() {
+            let pic = "letter2.png";
+            document.getElementById("section").src = pic;
+            eText(nowMonth.getMonth() + 1);
+        }
+        function image2() {
+            let pic = "letter.png";
+            document.getElementById("section").src = pic;
+            textRemove();
+        }
+
+        //편지 내용
+        function eText(m) {
+            if (m === 1) {
+                document.getElementById("letterImgText").innerText = "이번년도도 힘내세요!"
+            } else if (m === 2) {
+                document.getElementById("letterImgText").innerText = "좋은 일 가득한 2월 되세요!"
+            } else if (m === 3) {
+                document.getElementById("letterImgText").innerText = "새로운 것 투성이 3월 :> 뭘 하든 잘될거에요"
+            } else if (m === 4) {
+                document.getElementById("letterImgText").innerText = "봄의 절정 4월입니다. 행운 가득하세요!"
+            } else if (m === 5) {
+                document.getElementById("letterImgText").innerText = "가정의 달, 가족들에게 전화 한통 어떠세요?"
+            } else if (m === 6) {
+                document.getElementById("letterImgText").innerText = "벌써 반년이 지났습니다. 남은 반년도 파이팅하세요!"
+            } else if (m === 7) {
+                document.getElementById("letterImgText").innerText = "여름 휴가는 어디로 가시나요?"
+            } else if (m === 8) {
+                document.getElementById("letterImgText").innerText = "항상 더위 조심하세요 (__)"
+            } else if (m === 9) {
+                document.getElementById("letterImgText").innerText = "즐거운 한가위 보내세요 :)"
+            } else if (m === 10) {
+                document.getElementById("letterImgText").innerText = "천고마비의 계절 가을입니다. 풍족한 가을 보내세요!"
+            } else if (m === 11) {
+                document.getElementById("letterImgText").innerText = "11월입니다, 감기 조심하세요!"
+            } else if (m === 12) {
+                document.getElementById("letterImgText").innerText = "즐거운 연말 보내세요. 이번년도도 수고하셨습니다 :) ♥"
+            }
+        }
+        //편지 내용 삭제
+        function textRemove() {
+            document.getElementById("letterImgText").innerHTML = "";
+        }
+
+        //배경 이미지
+        function backPhoto(num) {
+            // let pic;
+            if(num===1 || num===11 || num===12){
+                document.body.style.backgroundImage = "url('backGroundImg/winter2.JPG')";
+            }
+            else if(num===2 || num===3 || num ===4){
+                document.body.style.backgroundImage = "url('backGroundImg/spring3.jpeg')";
+            }
+            else if(num===5){
+                document.body.style.backgroundImage = "url('backGroundImg/summer6.jpg')";
+            }
+            else if(num===6 || num===7 || num===8){
+                document.body.style.backgroundImage = "url('backGroundImg/summer4.JPG')";
+            }
+            else if(num===9 || num===10){
+                document.body.style.backgroundImage = "url('backGroundImg/fall.png')";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="CalendarBody">
+        <div class="letterImg">
+            <img class="blinking" id="section" src="letter.png" width="80px" style="cursor: pointer;" onclick="image();"
+                onmouseout="image2();">
+            <span id="letterImgText"></span>
+        </div>
+        <table class="Calendar">
+            <thead>
+                <tr>
+                    <td onClick="beforMonth();" style="cursor:pointer;">&#60;</td>
+                    <td colspan="5">
+                        <span id="calYear"></span>
+                        <span id="calMonth"></span>
+                        <span id="nowdate" onclick="nowdate();"><button id="nowdatebt">♥</button></span>
+                        <span id="label">
+                            <label for="nowdatebt" style="cursor:pointer;">♥</label>
+                            <div id="text">
+                                <a>현재 날짜로 되돌아가기</a>
+                            </div>
+                        </span>
+                    </td>
+                    <td onClick="afterMonth();" style="cursor:pointer;">&#62;</td>
+                </tr>
+                <tr>
+                    <td>Sun</td>
+                    <td>Mon</td>
+                    <td>Tue</td>
+                    <td>Wed</td>
+                    <td>Thu</td>
+                    <td>Fri</td>
+                    <td>Sun</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

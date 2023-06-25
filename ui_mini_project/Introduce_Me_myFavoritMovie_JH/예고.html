@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body::before {
+            background-image: url("resource/img/indexImg/bodyBack2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+            opacity: 0.3;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        #예고_text {
+            position: absolute;
+            font-family: 'East Sea Dokdo', cursive;
+            font-size: 80px;
+            top: 100px;
+            left: 100px;
+        }
+
+        #예고영상 {
+            position: absolute;
+            top: 250px;
+            left: 200px;
+        }
+
+        #mark {
+            position: absolute;
+            right: 600px;
+            top: 230px;
+
+            display: none;
+        }
+
+        #mark img {
+            display: block;
+        }
+
+        #wave {
+            position: absolute;
+            left: 70px;
+        }
+
+        #mark_text1 {
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 40px;
+            position: absolute;
+            right: 350px;
+            top: 260px;
+            color: green;
+        }
+
+        #mark_text2 {
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 40px;
+            position: absolute;
+            right: 350px;
+            top: 415px;
+            color: red;
+        }
+
+        #mark_text3 {
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 40px;
+            position: absolute;
+            right: 350px;
+            bottom: 300px;
+            color: blue;
+        }
+
+        #mark_text4 {
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 40px;
+            position: absolute;
+            right: 350px;
+            bottom: 150px;
+            color: rgb(0, 109, 233);
+        }
+
+        .mark_text {
+            display: none;
+        }
+
+        #mark img:hover #mark_text1 {
+            display: block;
+        }
+
+        #보러가기_bt>button {
+            border-radius: 25px;
+            width: 270px;
+            height: 50px;
+            line-height: 50px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+            font-family: 'East Sea Dokdo', cursive;
+            font-size: 40px;
+            position: absolute;
+            bottom: 130px;
+            left: 700px;
+        }
+
+        #보러가기_bt>button:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+        }
+
+        #goIndex2>button {
+            line-height: 40px;
+            border-radius: 25px;
+            width: 140px;
+            height: 40px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+            position: absolute;
+            z-index: 1;
+            top: 30px;
+            left: 35px;
+        }
+
+        #goIndex2>button:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="goIndex2"><button onclick="goIndex()">Go Index</button></div>
+    <div id="예고_text">
+        영화가 말하고 싶은 바가 잘 들어나고, 주토피아의 아름다움에 계속 생각나는 영화!
+    </div>
+    <div id="예고영상">
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/8XtnZKG83A0" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+    <div id="보러가기_bt">
+        <button onclick="display_on()">바로 보러가기 Click!</button>
+    </div>
+    <div id="mark">
+        <img src="resource/img/movieImg/sireson.png" width="300px" id="sireson" style="cursor: pointer;" onmouseover="mark_textOn(0)"
+            onmouseout="mark_textOut(0)" onclick="location_go(0)">
+        <img src="resource/img/movieImg/tiving.png" width="300px" id="tiving" style="cursor: pointer;" onmouseover="mark_textOn(1)"
+            onmouseout="mark_textOut(1)" onclick="location_go(1)">
+        <img src="resource/img/movieImg/disney.png" width="300px" id="disney" style="cursor: pointer;" onmouseover="mark_textOn(2)"
+            onmouseout="mark_textOut(2)" onclick="location_go(2)">
+        <img id="wave" src="resource/img/movieImg/wave.png" width="150px" id="wave" style="cursor: pointer;" onmouseover="mark_textOn(3)"
+            onmouseout="mark_textOut(3)" onclick="location_go(3)">
+    </div>
+    <div id="mark_text1" class="mark_text">단품 5,500원<br><-보러가기 click!</div>
+            <div id="mark_text2" class="mark_text">단품 5,500원<br><-보러가기 click!</div>
+                    <div id="mark_text3" class="mark_text">단품 5,500원<br><-보러가기 click!</div>
+                            <div id="mark_text4" class="mark_text">단품 5,500원<br><-보러가기 click!</div>
+
+                                    <script>
+                                        let m = document.getElementById("mark");
+                                        function display_on() {
+                                            m.style.display = 'block';
+                                        }
+
+                                        let mt1 = document.getElementById("mark_text1");
+                                        let mt2 = document.getElementById("mark_text2");
+                                        let mt3 = document.getElementById("mark_text3");
+                                        let mt4 = document.getElementById("mark_text4");
+                                        let mt = [mt1, mt2, mt3, mt4];
+                                        function mark_textOn(num) {
+                                            mt[num].style.display = 'block';
+                                        }
+                                        function mark_textOut(num) {
+                                            mt[num].style.display = 'none';
+                                        }
+
+                                        let l = ["https://m.serieson.naver.com/v2/movie/143869", "https://www.tving.com/contents/M000177333?utm_source=Naver&utm_medium=Organic&utm_campaign=SERP",
+                                            "https://www.wavve.com/player/movie?movieid=MV_CA01_DY0000011371&autoplay=y", "https://www.disneyplus.com/ko-kr/movies/zootopia/1QOxldhm1sKg"];
+                                        function location_go(num) {
+                                            location.href = l[num];
+                                        }
+                                        function goIndex() {
+                                            location.href = "index.html";
+                                        }
+                                    </script>
+</body>
+
+</html>

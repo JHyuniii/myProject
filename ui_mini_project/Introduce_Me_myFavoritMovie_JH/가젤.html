@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body::before {
+            background-image: url("resource/img/indexImg/bodyBack2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+            opacity: 0.2;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        #character {
+            position: relative;
+        }
+
+        #character div {
+            position: absolute;
+        }
+
+        #가젤 {
+            right: 150px;
+            top: 80px;
+        }
+
+        #back {
+            border-radius: 25px;
+            width: 140px;
+            height: 40px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+            position: absolute;
+            z-index: 1;
+            top: 30px;
+            left: 35px;
+        }
+
+        #back:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+        }
+
+        #video {
+            position: absolute;
+            left: 650px;
+            top: 290px;
+        }
+
+        #talk {
+            width: 950px;
+            position: absolute;
+            top: 150px;
+            left: 800px;
+            font-family: 'Yeon Sung', cursive;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="video">
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/HHQXdILvsPE" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+    <div id="talk">
+        이 노래 다들 알지? 내가 부른 거야!
+    </div>
+    <div id="character">
+        <div id="가젤"><img src="resource/img/movieImg/가젤.png" width="300px" onmouseover="display_talk()" onmouseout="displayOut_talk()"></div>
+    </div>
+    <button id="back" onClick="history.go(-1)" ;>Back</button>
+
+    <script>
+        let t = document.getElementById("talk");
+        function display_talk() {
+            t.style.display = 'block';
+        }
+        function displayOut_talk() {
+            t.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

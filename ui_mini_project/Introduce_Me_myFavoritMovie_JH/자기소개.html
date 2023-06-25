@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #intro {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #me {
+            display: inline-block;
+            border-radius: 300px 300px 300px 300px;
+            overflow: hidden;
+            position: absolute;
+            top: 80px;
+            left: 300px;
+            background-color: #E0F2F7;
+            z-index: 99;
+        }
+
+        #halfBack {
+            background-color: #E0F2F7;
+            position: absolute;
+            width: 100%;
+            height: 450px;
+            bottom: 0;
+        }
+
+        #back {
+            position: relative;
+            width: 100%;
+            height: 1000px;
+        }
+
+        #name {
+            position: absolute;
+            font-family: 'Righteous', cursive;
+            font-size: 60px;
+            left: 800px;
+            top: 90px;
+        }
+
+        span {
+            color: #E0F2F7;
+        }
+
+        #info {
+            position: absolute;
+            left: 950px;
+            top: 330px;
+            display: none;
+        }
+
+        #info p {
+            font-weight: bold;
+            font-size: 30px;
+            font-family: 'Sunflower', sans-serif;
+        }
+
+        #bts {
+            position: absolute;
+            display: flex;
+            top: 650px;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        #bts>div {
+            position: absolute;
+            z-index: 1;
+        }
+
+        #myinfo {
+            left: 300px;
+        }
+
+        #process {
+            left: 700px;
+        }
+
+        #like {
+            left: 1100px;
+        }
+
+        #goal {
+            left: 1500px;
+        }
+
+        .bts_text {
+            position: absolute;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 40px;
+            width: 300px;
+            left: 10px;
+        }
+
+        #like_text {
+            left: -5px;
+        }
+
+        #bts img {
+            -webkit-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+        }
+
+        #bts img:hover {
+            margin-left: -20px;
+            -webkit-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+        }
+
+        section {
+            position: relative;
+        }
+
+        #s1_halfBack {
+            background-color: #E0F2F7;
+            position: absolute;
+            width: 950px;
+            height: 100%;
+            left: 0;
+        }
+
+        #s1_back {
+            position: relative;
+            width: 100%;
+            height: 1000px;
+        }
+
+        #topbt {
+            position: absolute;
+            bottom: 80px;
+            right: 50px;
+            cursor: pointer;
+        }
+
+        #s1_img {
+            position: absolute;
+            z-index: 1;
+            top: 130px;
+            left: 870px;
+        }
+
+        #s1_img div {
+            margin: 20px;
+        }
+
+        #s1_sns {
+            position: absolute;
+            z-index: 1;
+            bottom: 60px;
+            left: 810px;
+        }
+
+        #s1_sns div {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        #s1_text {
+            position: absolute;
+            z-index: 1;
+            border: 1px solid black;
+            top: 100px;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 70px;
+            color: #3104B4;
+            text-shadow: 3px 3px 3px #81DAF5;
+        }
+
+        #s1_text div {
+            position: absolute;
+            width: 700px;
+            display: none;
+        }
+
+        #pNum {
+            left: 1050px;
+            top: 80px;
+        }
+
+        #adrress {
+            top: 245px;
+            left: 500px;
+        }
+
+        #email {
+            top: 380px;
+            left: 1060px;
+        }
+
+        #mbti {
+            top: 540px;
+            left: 700px;
+        }
+
+        #s2_circle {
+            position: absolute;
+            z-index: 1;
+            left: 100px;
+            top: 100px;
+        }
+
+        #s2_circle div {
+            margin: 5px;
+            border-radius: 20px 20px 20px 20px;
+            position: absolute;
+
+            border: 1px solid black;
+        }
+
+        #s1 {
+            left: 833px;
+        }
+
+        #s2 {
+            left: 833px;
+            top: 100px;
+        }
+
+        #s3 {
+            left: 833px;
+            top: 250px;
+        }
+
+        #s4 {
+            left: 833px;
+            top: 350px;
+        }
+
+        #s5 {
+            left: 833px;
+            top: 450px;
+        }
+
+        #s6 {
+            left: 833px;
+            top: 550px;
+        }
+
+        #s7 {
+            left: 833px;
+            top: 650px;
+        }
+
+        #s8 {
+            left: 833px;
+            top: 750px;
+        }
+
+        #s2_text {
+            position: absolute;
+            z-index: 1;
+
+        }
+
+        #s2_text div {
+            position: absolute;
+            width: 1000px;
+            font-family: 'Sunflower', sans-serif;
+            font-size: 40px;
+
+            display: none;
+        }
+
+        #s11 {
+            left: 860px;
+            top: 90px;
+        }
+
+        #s12 {
+            left: 860px;
+            top: 190px;
+        }
+
+        #s13 {
+            left: 860px;
+            top: 340px;
+        }
+
+        #s14 {
+            left: 860px;
+            top: 440px;
+        }
+
+        #s15 {
+            left: 870px;
+            top: 540px;
+        }
+
+        #s16 {
+            left: 870px;
+            top: 640px;
+        }
+
+        #s17 {
+            left: 860px;
+            top: 735px;
+        }
+
+        #s18 {
+            left: 870px;
+            top: 840px;
+        }
+
+        #whatLike {
+            position: absolute;
+            z-index: 1;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 90px;
+            top: 40px;
+            left: 100px;
+        }
+
+        #s3_halfBack {
+            background-color: #E0F2F7;
+            position: absolute;
+            width: 950px;
+            height: 100%;
+            left: 0;
+        }
+
+        #s3_back {
+            position: relative;
+            width: 100%;
+            height: 1000px;
+        }
+
+        #like_img {
+            position: absolute;
+            z-index: 1;
+        }
+
+        #like_img div {
+            position: absolute;
+            cursor: pointer;
+        }
+
+        #l1 {
+            top: 200px;
+            left: 200px;
+        }
+
+        #l2 {
+            top: 200px;
+            left: 500px;
+        }
+
+        #l3 {
+            top: 200px;
+            left: 800px;
+        }
+
+        #l4 {
+            top: 200px;
+            left: 1100px;
+        }
+
+        #l5 {
+            top: 200px;
+            left: 1400px;
+        }
+
+        #l6 {
+            top: 500px;
+            left: 200px;
+        }
+
+        #l7 {
+            top: 500px;
+            left: 500px;
+        }
+
+        #l8 {
+            top: 500px;
+            left: 800px;
+        }
+
+        #l9 {
+            top: 500px;
+            left: 1100px;
+        }
+
+        #l0 {
+            top: 500px;
+            left: 1400px;
+        }
+
+        #l5_text {
+            position: absolute;
+            z-index: 1;
+            top: 10px;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 25px;
+            left: 35px;
+        }
+
+        #l0_text {
+            position: absolute;
+            z-index: 1;
+            top: 35px;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 25px;
+            left: 35px;
+        }
+
+        #like_img div {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+        }
+
+        #like_img div:hover img {
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+        }
+
+        #s4_img {
+            position: absolute;
+            z-index: 1;
+            top: 100px;
+            left: 200px;
+        }
+
+        #s4_text {
+            position: absolute;
+            z-index: 1;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 80px;
+            left: 480px;
+            top: 110px;
+            font-weight: bold;
+        }
+
+        #s4_text2 {
+            position: absolute;
+            z-index: 1;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 40px;
+            left: 530px;
+            top: 240px;
+
+            display: none;
+        }
+
+        #s4_me {
+            display: inline-block;
+            border-radius: 300px 300px 300px 300px;
+            overflow: hidden;
+            position: absolute;
+            background-color: white;
+            z-index: 99;
+
+            bottom: 200px;
+            left: 40px;
+        }
+
+        #purpose {
+            position: absolute;
+            z-index: 1;
+            bottom: 260px;
+            left: 290px;
+            font-family: 'Yeon Sung', cursive;
+            font-size: 60px;
+            display: none;
+        }
+
+        #c1 {
+            position: absolute;
+            z-index: 1;
+            top: 320px;
+            left: 300px;
+        }
+
+        #c1 button {
+            background-color: #E0F2F7;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+            border: none;
+            z-index: 0;
+        }
+
+        @keyframes anime_textup {
+            0% {
+                top: 0;
+            }
+
+            20% {
+                top: -1rem;
+            }
+
+            40% {
+                top: 0
+            }
+
+            60% {
+                top: 0
+            }
+
+            80% {
+                top: 0
+            }
+
+            100% {
+                top: 0
+            }
+        }
+
+        #s4_text span {
+            position: relative;
+            animation: anime_textup 1s infinite;
+            font-weight: bold;
+            color: #81DAF5;
+        }
+
+        #s4_text span:nth-of-type(1) {
+            animation-delay: .1s;
+        }
+
+        #s4_text span:nth-of-type(2) {
+            animation-delay: .2s;
+        }
+
+        #s4_text span:nth-of-type(3) {
+            animation-delay: .3s;
+        }
+
+        #s4_text span:nth-of-type(4) {
+            animation-delay: .4s;
+        }
+
+        #thx {
+            position: absolute;
+            z-index: 1;
+            bottom: 140px;
+            left: 60px;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 40px;
+
+            display: none;
+        }
+
+        #c1>button {
+            border-radius: 25px;
+            width: 104px;
+            height: 40px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+        }
+
+        #c1>button:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+            position: relative;
+            top: 2px;
+        }
+
+        #goIndex>button {
+            line-height: 40px;
+            border-radius: 25px;
+            width: 140px;
+            height: 40px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+            position: absolute;
+            z-index: 1;
+            bottom: 30px;
+            left: 65px;
+        }
+
+        #goIndex>button:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+        }
+
+        #goIndex2>button {
+            line-height: 40px;
+            border-radius: 25px;
+            width: 140px;
+            height: 40px;
+            background-color: #E0F2F7;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 1px 4px 0 rgb(0, 0, 0, 0.5);
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 30px;
+            position: absolute;
+            z-index: 1;
+            top: 30px;
+            left: 35px;
+        }
+
+        #goIndex2>button:active {
+            box-shadow: 1px 1px 0 rgb(0, 0, 0, 0.5);
+        }
+
+        #s2_pText {
+            position: absolute; 
+            z-index: 1; 
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 70px;
+            left: 200px;
+            top: 50px;
+            color: #3104B4;
+            text-shadow: 3px 3px 3px #81DAF5;
+         } 
+    </style>
+</head>
+
+<body>
+    <div id="intro" class="intro">
+        <div id="goIndex2"><button onclick="goIndex()">Go Index</button></div>
+        <div id="me">
+            <img id="me1" src="resource/img/introduceImg/me1.png" style="width: fit-content;" onmouseover="display_on(1)"
+                onmouseout="display_on(2)">
+        </div>
+        <div id="name">
+            <h1>JooHyun <span>Park</span></h1>
+        </div>
+        <div id="info">
+            <p>안녕하세요, 행복하게 코딩하고 있는 박주현 입니다 :><br>저에 대해 더 보시려면 밑에 아이콘을 클릭해주세요!</p>
+        </div>
+        <div id="bts">
+            <div id="myinfo">
+                <img src="resource/img/introduceImg/myinfo.png" width="150px" class="click">
+                <div class="bts_text">info</div>
+            </div>
+            <div id="process">
+                <img src="resource/img/introduceImg/process.png" width="150px" class="click">
+                <div class="bts_text">process</div>
+            </div>
+            <div id="like">
+                <img src="resource/img/introduceImg/like.png" width="150px" class="click">
+                <div class="bts_text" id="like_text">like & love</div>
+            </div>
+            <div id="goal">
+                <img src="resource/img/introduceImg/set goal.png" width="150px" class="click">
+                <div class="bts_text">set goal</div>
+            </div>
+        </div>
+        <div id="back">
+            <div id="halfBack"></div>
+        </div>
+    </div>
+
+    <section id="s1_myinfo" width: 100vw; height: 100vh;>
+        <div id="s1_img">
+            <div><img src="resource/img/introduceImg/전화번호.png" width="130px" onclick="info_on(0)" style="cursor: pointer;"></div>
+            <div><img src="resource/img/introduceImg/주소.png" width="130px" onclick="info_on(1)" style="cursor: pointer;"></div>
+            <div><img src="resource/img/introduceImg/이메일.png" width="140px" onclick="info_on(2)" style="cursor: pointer;"></div>
+            <div><img src="resource/img/introduceImg/mbti.png" width="130px" onclick="info_on(3)" style="cursor: pointer;"></div>
+        </div>
+        <div id="s1_sns">
+            <div><img src="resource/img/introduceImg/instagram.png" width="100px" onclick="go_sns(1)" style="cursor: pointer;"></div>
+            <div><img src="resource/img/introduceImg/kakao.png" width="100px" onclick="go_sns(2)" style="cursor: pointer;"></div>
+        </div>
+        <div id="s1_text">
+            <div id="pNum">010-8649-****</div>
+            <div id="adrress">인천시 연수구</div>
+            <div id="email">pjhhyo0019@naver.com</div>
+            <div id="mbti">ESFJ</div>
+        </div>
+        <div id="s1_back">
+            <div id="s1_halfBack"></div>
+        </div>
+        <div id="topbt" class="topbt">
+            <img src="resource/img/introduceImg/topBt.png" width="130px">
+        </div>
+    </section>
+
+    <section id="s2_process" width: 100vw; height: 100vh;>
+        <div id="s2_pText">
+            점을 클릭해 보세요!
+        </div>
+        <div id="s2_circle">
+            <div id="s1" onclick="process_displayOn(0);"
+                style="width: 20px; height: 20px; background-color: #3104B4; cursor: pointer;"></div>
+            <div id="s2" onclick="process_displayOn(1);"
+                style="width: 20px; height: 20px; background-color: #3104B4; cursor: pointer;"></div>
+            <div id="s3" onclick="process_displayOn(2);"
+                style="width: 20px; height: 20px; background-color: #3104B4; cursor: pointer;"></div>
+            <div id="s4" onclick="process_displayOn(3);"
+                style="width: 20px; height: 20px; background-color: #3104B4; cursor: pointer;"></div>
+            <div id="s5" onclick="process_displayOn(4);"
+                style="width: 20px; height: 20px; background-color: #3104B4; cursor: pointer;"></div>
+            <div id="s6" onclick="process_displayOn(5);"
+                style="width: 20px; height: 20px; background-color: #3104B4; cursor: pointer;"></div>
+            <div id="s7" onclick="process_displayOn(6);"
+                style="width: 20px; height: 20px; background-color: #3104B4; cursor: pointer;"></div>
+            <div id="s8" onclick="process_displayOn(7);"
+                style="width: 20px; height: 20px; background-color: #3104B4; cursor: pointer;"></div>
+        </div>
+        <div id="s2_text">
+            <div id="s11">🎂&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2002.03.04</div>
+            <div id="s12">🏆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10살, 타자 500타로 학교 타자왕 수상</div>
+            <div id="s13">👑&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고등학생 학년 회장</div>
+            <div id="s14">🖥️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터 공부를 해야겠다고 다짐, 학점은행제 시작</div>
+            <div id="s15">🎖️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;네트워크 관리사 2급</div>
+            <div id="s16">🎖️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴활 1급</div>
+            <div id="s17">🏫&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;학원 ing-</div>
+            <div id="s18">🎖️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;정처산기, 정처기 ing-</div>
+        </div>
+        <div id="s1_back">
+            <div id="s1_halfBack"></div>
+        </div>
+        <div id="topbt" class="topbt">
+            <img src="resource/img/introduceImg/topBt.png" width="130px">
+        </div>
+    </section>
+
+    <section id="s3_like">
+        <div id="whatLike">What I <span style="color: #3104B4;">Like</span>?</div>
+        <div id="like_img">
+            <div id="l1"><img src="resource/img/introduceImg/밤톨1.jpg" width="300px"></div>
+            <div id="l2"><img src="v엽떡.jpg" width="300px"></div>
+            <div id="l3"><img src="resource/img/introduceImg/아인슈페너.jpg" width="300px"></div>
+            <div id="l4"><img src="resource/img/introduceImg/달봉.jpg" width="300px"></div>
+            <div id="l5">
+                <img src="resource/img/introduceImg/노래2.jpg" width="300px" onclick="singGo(1)">
+                <div id="l5_text">노래 들으러 가기 Click!</div>
+            </div>
+            <div id="l6"><img src="resource/img/introduceImg/눙지.jpg" width="300px"></div>
+            <div id="l7"><img src="resource/img/introduceImg/밤톨2.jpg" width="300px"></div>
+            <div id="l8"><img src="resource/img/introduceImg/송도.jpg" width="300px"></div>
+            <div id="l9"><img src="resource/img/introduceImg/밤톨3.jpg" width="300px"></div>
+            <div id="l0">
+                <img src="resource/img/introduceImg/노래1.jpg" width="300px" onclick="singGo(2)">
+                <div id="l0_text">노래 들으러 가기 Click!</div>
+            </div>
+        </div>
+
+        <div id="s3_back" style="background-color: #E0F2F7;">
+            <div id="s3_halfBack"></div>
+        </div>
+        <div id="topbt" class="topbt">
+            <img src="resource/img/introduceImg/topBt.png" width="130px">
+        </div>
+    </section>
+
+    <section id="s4_setGoal">
+        <div id="s4_img">
+            <img src="resource/img/introduceImg/계단.png" width="200px">
+        </div>
+        <div id="s4_text">
+            <span>M</span>
+            <span>o</span>
+            <span>v</span>
+            <span>e</span>
+            <span>F</span>
+            <span>o</span>
+            <span>r</span>
+            <span>w</span>
+            <span>a</span>
+            <span>r</span>
+            <span>d</span>
+        </div>
+        <div id="s4_text2">
+            <div>🚩 졸업 마무리 잘 하기</div>
+            <div>🚩 뭐든 성실하게 임하고 배우는 자세 갖기</div>
+            <div>🚩 clean code를 위해 나아가기</div>
+        </div>
+        <div id="c1"><button onclick="s4_On()">Click!</button></div>
+        <div id="purpose">
+            "현실에 안주하지 않고 계속 나아가는 사람이 되고 싶습니다."
+        </div>
+        <div id="s4_me">
+            <img id="s4_me4" src="resource/img/introduceImg/me1.png" style="width: fit-content; width: 200px;" onmouseover="s4_display_on(1)"
+                onmouseout="s4_display_on(2)">
+        </div>
+        <div id="thx">감사합니다 :)</div>
+        <div id="goIndex"><button onclick="goIndex()">Go Index</button></div>
+        <div id="back">
+            <div id="halfBack"></div>
+        </div>
+        <div id="topbt" class="topbt">
+            <img src="resource/img/introduceImg/topBt.png" width="130px">
+        </div>
+    </section>
+</body>
+
+<script>
+    let m = document.getElementById("me1");
+    let i = document.getElementById("info");
+    function display_on(num) {
+        if (num === 1) {
+            m.setAttribute('src', 'resource/img/introduceImg/me2.png');
+            i.style.display = 'block';
+        }
+        else if (num === 2) {
+            m.setAttribute('src', 'resource/img/introduceImg/me1.png');
+            i.style.display = 'none';
+        }
+    }
+
+    let c = document.querySelectorAll(".click");
+
+    let s = document.querySelectorAll("section");
+    let f_s = s[0].offsetTop;
+    let s_s = s[1].offsetTop;
+    let t_s = s[2].offsetTop;
+    let th_s = s[3].offsetTop;
+
+    c[0].onclick = function () {
+        window.scroll({ top: f_s, behavior: "smooth" });
+    }
+    c[1].onclick = function () {
+        window.scroll({ top: s_s, behavior: "smooth" });
+    }
+    c[2].onclick = function () {
+        window.scroll({ top: t_s, behavior: "smooth" });
+    }
+    c[3].onclick = function () {
+        window.scroll({ top: th_s, behavior: "smooth" });
+    }
+    // -----------------------------------------------------------------
+
+    let b = document.querySelectorAll(".topbt");
+
+    let d = document.querySelectorAll(".intro");
+    let f = d[0].offsetTop;
+    b[0].onclick = function () {
+        window.scroll({ top: f, behavior: "smooth" });
+    }
+    b[1].onclick = function () {
+        window.scroll({ top: f, behavior: "smooth" });
+    }
+    b[2].onclick = function () {
+        window.scroll({ top: f, behavior: "smooth" });
+    }
+    b[3].onclick = function () {
+        window.scroll({ top: f, behavior: "smooth" });
+    }
+
+    let info_text = ["pNum", "adrress", "email", "mbti"];
+    function info_on(num) {
+        if (num === 0) {
+            document.getElementById(info_text[0]).style.display = 'block';
+        }
+        else if (num === 1) {
+            document.getElementById(info_text[1]).style.display = 'block';
+        }
+        else if (num === 2) {
+            document.getElementById(info_text[2]).style.display = 'block';
+        }
+        else if (num === 3) {
+            document.getElementById(info_text[3]).style.display = 'block';
+        }
+    }
+
+    function go_sns(num) {
+        if (num === 1) {
+            location.href = "https://www.instagram.com/?hl=en";
+        }
+        else if (num === 2) {
+            location.href = "https://www.kakaocorp.com/page/service/service/KakaoTalk?lang=ko";
+        }
+    }
+    // --------------------------------------------------------------------------------------
+    let process_text = ["s11", "s12", "s13", "s14", "s15", "s16", "s17", "s18"];
+    function process_displayOn(num) {
+        if (num === 0) {
+            document.getElementById(process_text[0]).style.display = 'block';
+        }
+        else if (num === 1) {
+            document.getElementById(process_text[1]).style.display = 'block';
+        }
+        else if (num === 2) {
+            document.getElementById(process_text[2]).style.display = 'block';
+        }
+        else if (num === 3) {
+            document.getElementById(process_text[3]).style.display = 'block';
+        }
+        else if (num === 4) {
+            document.getElementById(process_text[4]).style.display = 'block';
+        }
+        else if (num === 5) {
+            document.getElementById(process_text[5]).style.display = 'block';
+        }
+        else if (num === 6) {
+            document.getElementById(process_text[6]).style.display = 'block';
+        }
+        else if (num === 7) {
+            document.getElementById(process_text[7]).style.display = 'block';
+        }
+    }
+    function process_displayOff(num) {
+        if (num === 0) {
+            document.getElementById(process_text[0]).style.display = 'none';
+        }
+        else if (num === 1) {
+            document.getElementById(process_text[1]).style.display = 'none';
+        }
+        else if (num === 2) {
+            document.getElementById(process_text[2]).style.display = 'none';
+        }
+        else if (num === 3) {
+            document.getElementById(process_text[3]).style.display = 'none';
+        }
+        else if (num === 4) {
+            document.getElementById(process_text[4]).style.display = 'none';
+        }
+        else if (num === 5) {
+            document.getElementById(process_text[5]).style.display = 'none';
+        }
+        else if (num === 6) {
+            document.getElementById(process_text[6]).style.display = 'none';
+        }
+        else if (num === 7) {
+            document.getElementById(process_text[7]).style.display = 'none';
+        }
+    }
+
+    function singGo(num) {
+        if (num === 1) {
+            location.href = "https://youtu.be/dmEU6-UQSgU";
+        }
+        else if (num === 2) {
+            location.href = "https://youtu.be/9PjPh56ZUEQ";
+        }
+    }
+
+    let m4 = document.getElementById("s4_me4");
+    function s4_display_on(num) {
+        if (num === 1) {
+            m4.setAttribute('src', 'resource/img/introduceImg/me2.png');
+            document.getElementById("purpose").style.display = 'block';
+            document.getElementById("thx").style.display = 'block';
+        }
+        else if (num === 2) {
+            m4.setAttribute('src', 'me1.png');
+            document.getElementById("purpose").style.display = 'none';
+            document.getElementById("thx").style.display = 'none';
+        }
+    }
+
+    function s4_On() {
+        document.getElementById("s4_text2").style.display = 'block';
+    }
+
+    function goIndex() {
+        location.href = "index.html";
+    }
+</script>
+
+</html>
