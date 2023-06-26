@@ -1,0 +1,22 @@
+@charset "UTF-8";
+section {
+    position: absolute;
+    top: 35vh;
+    width: 67vw;
+    left: 20vw;
+}
+section #titleBox {
+    background-color: #F2B441;
+    width: 10vw;
+    height: 6vh;
+    font-size: 20px;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-family: 'KimjungchulGothic-Bold';
+    line-height: 2.3;
+}
+section #inquiryBox {
+    border: 1px solid #F2B441;
+    margin-top: 2vh;
+}

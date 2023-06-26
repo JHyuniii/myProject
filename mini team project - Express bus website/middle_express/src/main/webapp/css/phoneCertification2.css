@@ -1,0 +1,50 @@
+@charset "UTF-8";
+section #titleText{
+	font-size: 24px;
+	text-align: center;
+}
+.inputBox{
+	border: 1px solid #e6e6e6;
+	width: 100%;
+	height: 20vh;
+}
+.inputBox #box{
+	width: 60%;
+	height: 50%;
+	margin-left: 20%;
+	margin-top: 3.5%;
+	background-color: #f3f4f6;
+	position: relative;
+}
+.inputBox #box > p{
+	font-size: 12px;
+	font-weight: bold;
+	color: #666;
+	padding: 2%;
+	text-align: left;
+}
+.inputBox #box #phoneNum{
+	width: 95%;
+	height: 40%;
+	top: 40%;
+	left: 2%;
+	position: absolute;
+	background-color: #f3f4f6;
+	border: none;
+	font-size: 16px;
+}
+#sendNum{
+    height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 50px;
+    border: none;
+    background: #b8becc;
+    color: #fff;
+    margin-top: 3%;
+    margin-left: 45%;
+}
+#sendNum:hover {
+	background: #a1abc2;
+}

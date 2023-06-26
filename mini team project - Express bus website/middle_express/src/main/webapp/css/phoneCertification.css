@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+section #clauseText{
+	width: 70%;
+	margin-left: 15%;
+}
+section p{
+	font-size: 24px;
+	font-family: 'Malgun Gothic', '맑은고딕', sans-serif;
+	text-align: center;
+}
+section #clauseText span{
+	box-shadow: inset 0 -11px 0 #8EA3BF; line-height: 21px
+}
+.scrollBox{
+	height: 120px;
+	overflow-y: scroll;
+	border-bottom: 1px solid #f1f2f4;
+	border-top: 1px solid #a1a6b2;
+	width: 100%;
+}
+section .agreement_tit {
+	position: relative;
+	/* border-bottom: 1px solid #a1a6b2; */
+}
+section .agreement_tit > h4{
+	font-size: 20px;
+	font-weight: normal;
+	display: inline-block;
+	margin-bottom: 1%;
+}
+section .agreement_tit > h4 > span{
+	font-size: 15px;
+	color: #b3b3b3;
+}
+section .agreement_tit .check label{
+	font-size: 15px;
+	cursor: pointer;
+	color: #b3b3b3;
+	margin-right: 0;
+	float: right;
+	padding: 0 2%;
+	line-height: 5;
+}
+/* section .agreement_tit .check input{
+	display: none;
+} */
+.check input:checked + label{
+	color: #F2BC8D;
+}
+section .agreement_tit .terms_wrap{
+	margin-top: 0;
+	
+}
+section .agreement_tit .terms_wrap *{
+	font-size: 13px;
+}
+section .agreement_tit .terms_wrap h1{
+	font-weight: bold;
+	text-align: center;
+	margin: 10px 0;
+}
+table{
+	text-indent: initial;
+	border-spacing: 0px;
+    border-collapse: collapse;
+	margin-left: 2%;
+}
+th{
+	width:  21vw;
+	padding: 6px 0;
+    font-weight: bold;
+    color: #F2BC8D;
+    text-align: left;
+    border-bottom: 1px solid #f1f2f4;
+    border-top: 1px solid #a1a6b2;
+}
+td{
+	border-bottom: 1px solid #f1f2f4;
+    line-height: 1.5;
+    padding: 9px 10px 9px 0;
+    font-size: 14px;
+    vertical-align: top;
+}
+section .agreement_tit p{
+	margin-left: 2%;
+	color: red;
+	text-align: left;
+	padding-bottom: 3%;
+}
+dl dt{
+	font-weight: bold;
+}
+dl li li{
+	color: #666;
+}
+#agreeAll{
+	padding: 2% 41%;
+	position: absolute;
+	margin-top: 2%;
+	left: 1%;
+	font-size: 15px;
+    color: #b3b3b3;
+    border: 1px solid #b3b3b3;
+}
+input[type="checkbox"]{
+	display: none;
+}
+#agree3:checked + label {
+	color: #F2BC8D;
+    border: 1px solid #F2BC8D;
+}
+#btnBox{
+	position: absolute;
+	width: 50%;
+	left: 30%;
+	height: 10%;
+    top: 120%;
+}
+#agreeNo{
+	background-color: #b8becc;
+	color: white;
+}
+#agreeYes{
+	background: #F29F8D;
+	color: white;
+}
+#agreeNo:hover{
+	background-color: #a1abc2;
+}
+#agreeYes:hover{
+	background-color: #E69785;
+}
+input[type="button"]{
+	border: none;
+	width: 40%;
+	height: 8vh;
+	margin-left: 1%;
+}

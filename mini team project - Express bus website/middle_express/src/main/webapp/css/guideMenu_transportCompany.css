@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+.headerMenu {
+    border-bottom: 1px solid #e6e6e6;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 85vw;
+    height: 7vh;
+}
+.headerMenu li {
+    float: left;
+    padding: 1.3%;
+    margin-top: -16;
+    position: relative;
+    left: -3%;
+    border-right: 1px solid #e6e6e6;
+}
+.headerMenu select{
+	border: none;
+}
+#Text1 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+#Text1 span {
+    font-size: 12px;
+    font-weight: normal;
+}
+.terms_wrap tr {
+    border-bottom: 1px solid #eee;
+}
+.terms_wrap * {
+    font-size: 13px;
+    width: 60vw;
+    padding: 1% 0%;
+}
+table{
+	border-collapse: collapse
+}
+.terms_wrap th {
+    font-weight: normal;
+    color: #F2C438;
+    text-align: left;
+}
+#companyTable span {
+    color: #034c8c;
+    cursor: pointer;
+}

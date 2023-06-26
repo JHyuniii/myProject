@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+	.wrapper{display:flex;}
+	.page{position: absolute;
+    top: 35%;
+    left: 30%;width : 55%; height :100%;}
+	.box_login{border:1px solid #DCDCDC;  }
+	.mob_h3{font-size:32px; line-height: 0.5; font-weight: lighter; text-align: center;}
+	.mob_p{text-align : center;}
+	.text_blue{color: #B0C4DE;}
+	.inner{display: flex; margin: 0 auto;}
+	.inner_IdPw{width: 30vw;}
+	.mob_submit{float : left; width: 12vw; height: 18.5vh; border: none; margin-left: 10px; background-color: #B0C4DE; color: white; font-size:1.5em; }
+	.mob_submit:hover{background-color: #778899;}
+	.inner_id{background-color:#F0F8FF; margin-bottom: 10px; width : 20vw; float: right; padding : 15px;}
+	.inner_password{background-color:#F0F8FF; margin-bottom: 10px; width : 20vw; float: right; padding : 15px;}
+	.inner_id>.id{border:none; background-color:#F0F8FF; width:19vw; height:30px; line-height: 1.5; font-size:16px;}
+	.inner_password>.password{border:none; background-color:#F0F8FF; width:19vw; height:30px; font-size:16px;}
+	.searchIdPassword{margin-left: 17%; margin-bottom: 40px; margin-top: 15px;}
+	.searchIdPassword>a{text-decoration: none; color: #778899; }
+	::placeholder{color:#778899;}
+	.join_wrap{border: 1px solid #DCDCDC; display: flex;}
+	.join_wrap>p{display:flex; padding: 15px 10px; margin-left: 10px;}
+	.join_wrap>p>span{width:40vw; padding-right: 20; font-size:14px; align-items: center; margin-top: 10px;margin-right: 10px;}
+	.join_wrap>p>a{width: 10vw; color : #778899; text-decoration: none; margin-top:10px;margin-left:10px; border-left: 1px solid gray; text-align: center; align-items: center;}
+	.bottom_img{width: 100%; margin-top: 30px;}

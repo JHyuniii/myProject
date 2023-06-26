@@ -1,0 +1,99 @@
+@charset "UTF-8";
+li i{
+	margin-left: 5px;
+}
+li{
+	list-style: none;
+}
+#sideL{
+	border-right: 1px solid #e5e5e5;
+	height: 180vh;
+	width: 15vw;
+	left: 0;
+	top: 0;
+	position: relative;
+	z-index: 5;
+	background-color: white;
+}
+#sideL #menu ul{
+	position: absolute;
+	top: 10%;
+	padding-left:0px;
+	width: 100%;
+}
+#sideL #menu ul li{
+	width: 92%;
+	text-align: left;
+	padding: 7% 0%;
+	font-size: 16px;
+	margin-left: 10%;
+}
+#sideL #menu ul li:hover span {
+	/* color: #F2C438; */
+    box-shadow: inset 0 -8px 0 #F2B441;
+}
+#sideL #goHome{
+	text-align: center;
+	position: absolute;
+	top: 2%;
+	left: 30%;
+}
+#sideL #goHome img{
+	width: 70px;
+	height: 60px;
+}
+#sideL #goHome > p{
+	font-size: 13px;
+	font-weight: bold;
+}
+#sideL #menu #wheelchair{
+	border-top: 1px solid #e5e5e5;
+	position: absolute;
+	margin-top: 0;
+	width: 100%;
+	top: 50%;
+	height: 10%;
+}
+#sideL #menu p{
+	margin-left: 10%;
+}
+#smallText{
+	color: #999;
+	font-size: 12px;
+	position: absolute;
+	top: 10%;
+}
+#bigText{
+	position: absolute;
+	top: 40%;
+}
+#wheelchair img{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	z-index: -1;
+	right: 5%;
+	top: 10%;
+}
+#sideL #menu #Tmoney{
+	border-top: 1px solid #e5e5e5;
+	position: absolute;
+	margin-top: 0;
+	width: 100%;
+	top: 60%;
+	height: 10%;
+}
+#sideL #menu #Tmoney #bigText{
+	top: 30%;
+}
+#sideL #menu #Tmoney img{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	z-index: -1;
+	right: 5%;
+	top: 10%;
+}
+#sideL .xi-bus{
+	color: #034C8C;
+}

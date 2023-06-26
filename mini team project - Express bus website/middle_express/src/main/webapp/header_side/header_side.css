@@ -1,0 +1,221 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KimjungchulGothic-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulGothic-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+body{
+	padding: 0;
+	margin: 0;
+	height: 1000px;
+}
+header{
+	position: absolute;
+	width: 85%;
+	height: 30vh;
+	padding-left: 15%;
+	overflow: hidden;
+	right: 0;
+}
+header #headerBox{
+	width: 85%;
+	height:100%;
+	padding-left: 15%;
+	text-align: center;
+	/* background-color: #034C8C; */
+	background-image: url("../images/header.png");
+	background-size: cover;
+}
+#line{
+	position: absolute;
+	height: 80%;
+	width: 80%;
+	/* border: 2px solid #F2C438; */
+	left: 17.5%;
+	top: 10%;
+}
+header #headerBox #titleText{
+	color: #F2C438;
+    font-size: 34px;
+	left: 15%;
+	position: absolute;
+	width: 85%;
+	top: 25%;
+	font-weight: bold;
+    text-shadow: 1px 1px 0px #F2B441;
+     font-family: 'KimjungchulGothic-Bold';
+}
+header #headerBox #stage {
+    position: absolute;
+    top: 35%;
+    width: 30%;
+    left: 40%;
+    font-weight: bold;
+    /* font-family: 'LINESeedKR-Bd'; */
+     font-family: 'KimjungchulGothic-Bold';
+}
+header #headerBox #stage li {
+    float: left;
+    margin-left: 2%;
+    font-size: 20px;
+    margin-top: 14%;
+    color: white;
+    text-shadow: 0.5px 0.5px 1px black;
+}
+header #headerBox #menuList{
+	position: absolute;
+	right: 0;
+	width: 30%;
+}
+header #headerBox #menuList li{
+	float: left;
+	padding: 0.5% 2%;
+}
+header #headerBox #menuList #loginBtn{
+	background-color: #F2C438;
+	border: 1px solid white;
+	font-weight: bold;
+}
+header #headerBox #menuList li a{
+	color: white;
+	text-decoration: none;
+	font-size: 11px;
+}
+header #headerBox #menuList select{
+	border: none;
+	font-size: 11px;
+    color: #fff;
+    background-color: rgba(255,255,255,.0);
+}
+header #headerBox #stage #active {
+    color: #F2B441;
+    text-shadow: 0.1px 0.1px 1px #F2B441;
+}
+li i{
+	margin-left: 5px;
+}
+li{
+	list-style: none;
+}
+#sideL{
+	border-right: 1px solid #e5e5e5;
+	height: 180vh;
+	width: 15vw;
+	left: 0;
+	top: 0;
+	position: relative;
+	z-index: 5;
+	background-color: white;
+}
+#sideL #menu {
+    position: relative;
+}
+#sideL #menu > ul {
+    padding-left: 0px;
+    width: 100%;
+}
+#sideL #menu > ul > li {
+    width: 92%;
+    text-align: left;
+    padding: 7% 0%;
+    font-size: 16px;
+    margin-left: 10%;
+}
+#menu li a {
+    color: black;
+    text-decoration: none;
+}
+#sideL #menu ul li:hover > a {
+    box-shadow: inset 0 -8px 0 #F2B441;
+}
+#sideL #goHome {
+    text-align: center;
+    padding-top: 5vh;
+}
+#sideL #goHome img{
+	width: 70px;
+	height: 60px;
+}
+#sideL #goHome > p{
+	font-size: 13px;
+	font-weight: bold;
+}
+#sideL #wheelchair {
+    border-top: 1px solid #e5e5e5;
+    width: 100%;
+    height: 10%;
+    position: relative;
+}
+#sideL #menu p{
+	margin-left: 10%;
+}
+#smallText{
+	color: #999;
+	font-size: 12px;
+	position: absolute;
+	top: 10%;
+    padding-left: 10%;
+}
+#bigText{
+	position: absolute;
+	top: 40%;
+    padding-left: 10%;
+}
+#wheelchair img{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	z-index: -1;
+	right: 5%;
+	top: 10%;
+}
+#sideL #Tmoney {
+    border-top: 1px solid #e5e5e5;
+    width: 100%;
+    height: 10%;
+    position: relative;
+}
+#sideL #Tmoney #bigText{
+	top: 30%;
+}
+#sideL #Tmoney img{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	z-index: -1;
+	right: 5%;
+	top: 10%;
+}
+#sideL .xi-bus{
+	color: #034C8C;
+}
+section{
+	position: absolute;
+	top: 40%;
+	width: 67%;
+	left: 25%;
+}
+.menu2 {
+    text-indent: -20px;
+    display: none;
+}
+.menu2 li {
+    text-indent: -15px;
+    margin-top: 2vh;
+}
+/* #guide_menu:hover + .menu2{
+	display: block;
+} */
+#menu input[type="checkbox"]{
+	display: none;
+}
+#guide_menu:checked + .menu2{
+	display: block;
+}

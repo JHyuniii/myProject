@@ -1,0 +1,263 @@
+@charset "UTF-8";
+.headerMenu {
+    border-bottom: 1px solid #e6e6e6;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 85vw;
+    height: 7vh;
+}
+.headerMenu li {
+    float: left;
+    padding: 1.3%;
+    margin-top: -16;
+    position: relative;
+    left: -3%;
+    border-right: 1px solid #e6e6e6;
+}
+.headerMenu select{
+	border: none;
+}
+section #titleText{
+	font-size: 24px;
+	text-align: center;
+}
+section #leftBox {
+    width: 20%;
+    height: 110vh;
+    background-color: #F2C438;
+    border-radius: 10px;
+}
+.circle {
+    background-color: white;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 7%;
+    margin-left: 6%;
+    margin-bottom: 5%;
+    font-size: 12px;
+    color: #F2C438;
+    margin-right: 5%;
+    line-height: 20px;
+}
+.circleText {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    font-family: 'LINESeedKR-Bd';
+}
+#leftBox #date {
+    color: white;
+    font-weight: bold;
+    margin-left: 6%;
+    padding-top: 7%;
+}
+#information {
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+}
+#information p {
+    color: white;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-left: 6%;
+}
+#information span {
+    font-weight: bold;
+    font-size: 17px;
+}
+#rightBox {
+    border: 1px solid #F2C438;
+    position: absolute;
+    width: 78%;
+    height: 110vh;
+    left: 22%;
+    top: 10%;
+    border-radius: 10px;
+}
+#rightBox #boxHeader {
+    text-align: center;
+    border-bottom: 1px solid #F2C438;
+}
+#rightBox #boxHeader p {
+    font-size: 20px;
+    color: #F2C438;
+    font-weight: bold;
+}
+#rightBox #boxSide {
+    width: 10vw;
+    height: 91%;
+    border-right: 1px #F2C438 solid;
+}
+#rightBox #boxSide ul {
+    margin-top: 0;
+}
+#rightBox #boxSide li {
+    width: 140%;
+    border-bottom: 1px #F2C438 solid;
+    margin-left: -3vw;
+    text-align: center;
+}
+#rightBox #boxSide p {
+    display: inline;
+    position: absolute;
+    font-size: 15px;
+    font-weight: bold;
+    width: 10%;
+    margin-top: 4%;
+}
+#rightBox #boxSide span {
+    font-size: 30px;
+}
+#rightBox #boxSide .countBtn {
+    width: 30%;
+    height: 12%;
+    padding: 10% 8%;
+    display: inline-block;
+    margin-left: 45%;
+}
+input[type="button"] {
+    width: 100%;
+    height: 50%;
+    font-size: 30px;
+    color: white;
+    background-color: #F2C438;
+    border: 1px solid #F2C438;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+#rightBox #seatImg {
+    position: absolute;
+    top: 12vh;
+    left: 12vw;
+}
+/* input[type="checkbox"]{
+	
+} */
+
+#seatList {
+    position: absolute;
+    top: 0;
+    width: 235px;
+    margin: 0 auto;
+	padding: 140px 20px 0 23px;
+    font-size: 0;
+    box-sizing: border-box;
+}
+#seatImg span {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 45px;
+    margin: 0 0 7px 8px;
+}
+.seat input {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+.seat label{
+	display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    line-height: 35px;
+	background: url("../images/seat.png");
+}
+#seatList span:nth-child(3n+3) {
+    margin-left: 56px;
+}
+
+#seatList span.lastSeat:nth-child(3n+3) {
+    margin-left: 8px;
+}
+.seat input:checked ~ label{
+	background: url("../images/seat2.png");
+}
+#rightBox #seatChoice {
+    border: 1px #F2C438 solid;
+    position: absolute;
+    top: 10%;
+    width: 36%;
+    height: 85%;
+    right: 3%;
+    border-radius: 10px;
+}
+#seatChoice #seatNum p {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 2;
+    border-bottom: 1px #F2C438 solid;
+    padding: 5% 10%;
+}
+#seatChoice #seatNum span {
+    font-size: 20px;
+    font-weight: normal;
+}
+#charge {
+    border-bottom: 1px solid#F2C438;
+}
+#charge #totalCharge {
+    font-weight: bold;
+}
+#charge p {
+    padding: 0% 10%;
+    font-size: 14px;
+}
+#charge #ch {
+    position: relative;
+    margin-right: 0;
+    float: right;
+    font-size: 17px;
+}
+input[type="radio"]{
+	opacity: 0;
+}
+#discount input:checked + label i{
+	color: #F2C438;
+}
+#discount {
+    border-bottom: 1px solid #F2C438;
+    padding-bottom: 5%;
+}
+
+#discount p {
+    margin-left: 10%;
+    font-size: 14px;
+    font-weight: bold;
+}
+#discount #smallTxt {
+    font-size: 12px;
+    color: #999;
+    padding-left: 0%;
+    line-height: 0;
+    font-weight: normal;
+}
+#rightBox #total {
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10%;
+    padding-top: 5%;
+}
+#total #TotalPriceBox {
+    float: right;
+    margin-right: 10%;
+    font-size: 20px;
+}
+input[type="submit"] {
+    border: none;
+    position: absolute;
+    right: 4%;
+    top: 87.5%;
+    padding: 2% 13%;
+    border-radius: 30px;
+    background-color: #F2C438;
+    color: white;
+    font-size: 18px;
+    font-family: 'LINESeedKR-Bd';
+}

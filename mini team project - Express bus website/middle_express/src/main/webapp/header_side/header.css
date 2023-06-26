@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+body{
+	padding: 0;
+	margin: 0;
+	height: 1000px;
+}
+header{
+	position: absolute;
+	width: 85%;
+	height: 30vh;
+	padding-left: 15%;
+	overflow: hidden;
+	right: 0;
+}
+header #headerBox{
+	width: 85%;
+	height:100%;
+	padding-left: 15%;
+	text-align: center;
+	background-color: #034C8C;
+}
+#line{
+	position: absolute;
+	height: 80%;
+	width: 80%;
+	border: 2px solid #F2C438;
+	left: 17.5%;
+	top: 10%;
+}
+header #headerBox #titleText{
+	color: #F2C438;
+    font-size: 34px;
+	left: 15%;
+	position: absolute;
+	width: 85%;
+	top: 25%;
+	font-weight: bold;
+	text-shadow: 1px 1px 0px white;
+}
+header #headerBox #stage {
+    position: absolute;
+    top: 35%;
+    width: 30%;
+    left: 40%;
+    font-weight: bold;
+    font-family: 'LINESeedKR-Bd';
+}
+header #headerBox #stage li {
+    float: left;
+    margin-left: 2%;
+    font-size: 20px;
+    margin-top: 14%;
+    color: white;
+    text-shadow: 0.5px 0.5px 1px black;
+}
+header #headerBox #menuList{
+	position: absolute;
+	right: 0;
+	width: 30%;
+}
+header #headerBox #menuList li{
+	float: left;
+	padding: 0.5% 2%;
+}
+header #headerBox #menuList #loginBtn{
+	background-color: #F26B1D;
+	border: 1px solid white;
+	font-weight: bold;
+}
+header #headerBox #menuList li a{
+	color: white;
+	text-decoration: none;
+	font-size: 11px;
+}
+header #headerBox #menuList select{
+	border: none;
+	font-size: 11px;
+    color: #fff;
+    background-color: rgba(255,255,255,.0);
+}
+header #headerBox #stage #active {
+    color: #F26B1D;
+    text-shadow: 0.1px 0.1px 1px gray;
+}
+li i{
+	margin-left: 5px;
+}
+li{
+	list-style: none;
+}
