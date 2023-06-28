@@ -26,6 +26,7 @@ public class todoListCommand implements Command{
 		String userId = (String) session.getAttribute("id");
 		
 		String todoDate = request.getParameter("todoDate");
+		System.out.println("todoDate : " + todoDate);
 		for(int i=0; i<lists.length; i++) {
 			String todoListId = userId + todoDate + i;
 			todoListDTO dto = new todoListDTO();

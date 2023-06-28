@@ -170,7 +170,7 @@
 			</div>
 			<div class="col-lg-3 mb-3">
 				<div class="card h-100 info-card" style="width: 18rem;"
-					onclick="location.href='bodyInfoSetting.jsp'">
+					onclick="location.href='bodyInfoView.do'">
 					<img src="./myPageIMG/bodyInfo.png"
 						class="card-img-top mx-auto d-block m-auto" alt="...">
 					<div
