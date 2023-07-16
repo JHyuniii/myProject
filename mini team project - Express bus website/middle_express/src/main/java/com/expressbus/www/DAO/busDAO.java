@@ -10,7 +10,10 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import org.apache.catalina.tribes.membership.StaticMember;
+
 import com.expressbus.www.DTO.busResDTO;
+import com.expressbus.www.DTO.dispatchInfoDTO;
 import com.expressbus.www.DTO.memManageDTO;
 
 public class busDAO {
@@ -31,6 +34,24 @@ private static busDAO busDAO = new busDAO();
 		} catch(ClassNotFoundException e){
 			System.out.println("드라이버 로드 실패");
 		}
+	}
+	
+	//터미널 이름 출력
+	public ArrayList<dispatchInfoDTO> home(){
+		String sql = "select * from terminal";
+		ArrayList<dispatchInfoDTO> list = new ArrayList<>();
+		try(Connection conn = DriverManager.getConnection(url, user, pw);
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sql)){
+			while(rs.next()) {
+				dispatchInfoDTO dto = new dispatchInfoDTO();
+				dto.setT_name(rs.getString("t_name"));
+				list.add(dto);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 
 	// 이메일 변경
