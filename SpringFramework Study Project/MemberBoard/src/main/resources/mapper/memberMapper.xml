@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Member">
+    <select id="list" resultType="member">
+        select * from member order by memberNum desc
+    </select>
+    <insert id="insert" parameterType="member">
+        insert into member (memberNum, name, rank, phoneNumber, email, updateDate)
+        values (#{memberNum}, #{name}, #{rank}, #{phoneNumber}, #{email}, now())
+    </insert>
+    <select id="detail" parameterType="int" resultType="member">
+        select * from member where memberNum = #{memberNum}
+    </select>
+    <delete id="delete" parameterType="int">
+        delete from member where memberNum = #{memberNum}
+    </delete>
+    <update id="update" parameterType="member">
+        update member set name=#{name}, rank=#{rank},
+         phoneNumber=#{phoneNumber}, email=#{email}, updateDate=now() where memberNum = #{memberNum}
+    </update>
+</mapper>
